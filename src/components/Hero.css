@@ -74,11 +74,28 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem; /* Ridotto per evitare sovrapposizioni */
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
   .hero-cta {
     flex-direction: column;
     width: 100%;
+    gap: 1rem;
   }
+
   .btn {
     width: 100%;
+    padding: 1rem 1.5rem;
   }
 }

@@ -10,26 +10,21 @@ const Projects = () => {
     {
       id: 'smc',
       tags: ['SMC', 'Genomics', 'C++', 'Privacy'],
-      github: 'https://github.com/lorenzofrasconi',
+      github: 'https://github.com/FRASCOH',
       demo: '#'
     },
     {
       id: 'cti',
-      tags: ['Cyber Threat Intelligence', 'SIEM', 'QRadar', 'IBM'],
-      github: 'https://github.com/lorenzofrasconi',
-      demo: '#'
+      tags: ['Cyber Threat Intelligence', 'SIEM', 'QRadar', 'IBM']
     },
     {
       id: 'viewer',
-      tags: ['VR', 'Unity3D', 'C#', 'Android'],
-      github: 'https://github.com/lorenzofrasconi',
-      demo: '#'
+      tags: ['VR', 'Unity3D', 'C#', 'Android']
     },
     {
-      id: 'vfq',
-      tags: ['iOS', 'Swift', 'AI', 'ChatGPT'],
-      github: 'https://github.com/lorenzofrasconi',
-      demo: '#'
+      id: 'acn',
+      tags: ['Python', 'Automation', 'NIS2', 'ACN', 'Actions'],
+      github: 'https://github.com/FRASCOH/monitor-acn-nis2'
     }
   ];
 
@@ -44,7 +39,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title text-gradient">{t('projects.title')}</h2>
-          <a href="https://github.com/lorenzofrasconi" target="_blank" rel="noreferrer" className="btn btn-secondary">
+          <a href="https://github.com/FRASCOH" target="_blank" rel="noreferrer" className="btn btn-secondary">
             {t('projects.view_all')}
           </a>
         </motion.div>
@@ -61,10 +56,12 @@ const Projects = () => {
             >
               <div className="project-header">
                 <h3>{t(`projects.items.${project.id}.title`)}</h3>
-                <div className="project-links">
-                  <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub"><CodeXml size={20} /></a>
-                  {project.demo !== '#' && <a href={project.demo} target="_blank" rel="noreferrer" aria-label="Demo"><ExternalLink size={20} /></a>}
-                </div>
+                {(project.github || (project.demo && project.demo !== '#')) && (
+                  <div className="project-links">
+                    {project.github && <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub"><CodeXml size={20} /></a>}
+                    {project.demo && project.demo !== '#' && <a href={project.demo} target="_blank" rel="noreferrer" aria-label="Demo"><ExternalLink size={20} /></a>}
+                  </div>
+                )}
               </div>
               <p>{t(`projects.items.${project.id}.desc`)}</p>
               <div className="project-tags">

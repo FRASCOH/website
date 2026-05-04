@@ -124,9 +124,15 @@
   margin-bottom: 0.3rem;
 }
 
+.experience-list, .education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem; /* Aumentato per una migliore separazione visiva */
+}
+
 .exp-item, .edu-item {
   padding: 2.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .exp-item:hover {
@@ -167,7 +173,7 @@
 
 .column-title {
   font-size: 1.4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* Aumentato */
   position: relative;
   display: inline-block;
 }
@@ -194,13 +200,22 @@
 }
 
 @media (max-width: 768px) {
+  .about-section {
+    padding: 5rem 0;
+  }
+
   .exp-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
   
-  .bio-card {
-    padding: 2rem;
+  .bio-card, .skills-section, .education-section.glass-panel, .exp-item {
+    padding: 1.75rem; /* Ottimizzato per mobile */
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }

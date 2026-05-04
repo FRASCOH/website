@@ -68,9 +68,9 @@
         "title": "VieweR (VR Mobile)",
         "desc": "Applicazione VR per Android con Unity3D e Google Cardboard per tour virtuali immersivi."
       },
-      "vfq": {
-        "title": "VFQ (iOS + AI)",
-        "desc": "App iOS in Swift con integrazione API ChatGPT per suggerimenti eventi basati su interessi e geolocalizzazione."
+      "acn": {
+        "title": "Monitor ACN NIS2",
+        "desc": "Sistema automatizzato in Python per il monitoraggio continuo degli aggiornamenti dell'Agenzia per la Cybersicurezza Nazionale (ACN) su NIS2 e Atti Generali, con notifiche email istantanee."
       }
     }
   },

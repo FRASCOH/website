@@ -76,11 +76,19 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--glass-bg);
-    padding: 1rem;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
     border-radius: 12px;
     margin-top: 0.5rem;
     border: 1px solid var(--glass-border);
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
   
   .nav-links.open {

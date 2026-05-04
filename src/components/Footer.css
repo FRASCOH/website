@@ -48,14 +48,18 @@
 }
 
 @media (max-width: 768px) {
-  .footer-container {
+  .footer .content-container {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     text-align: center;
   }
   
   .footer-content {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
