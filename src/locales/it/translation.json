@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Profilo",
+    "projects": "Progetti",
+    "contact": "Contatti"
+  },
+  "hero": {
+    "tagline": "Proteggere il Futuro | Gestire l'Innovazione",
+    "subtitle": "Esperto in Cybersecurity, IT Project Manager e Professore Universitario. Specializzato in sicurezza tecnologica e gestione di progetti strategici.",
+    "cta_projects": "Vedi Progetti",
+    "cta_contact": "Contattami"
+  },
+  "about": {
+    "title": "Chi Sono",
+    "profile_title": "Profilo Professionale",
+    "text": "Laureato Magistrale in Sicurezza Informatica presso l'Università degli Studi di Milano e Laureato Triennale in Informatica presso l'Università degli Studi di Parma. Attualmente ricopro il ruolo di PMO & Technology Security presso Zefiro NET, occupandomi di progetti strategici e compliance (NIS2, ISO 27001, GDPR). Unisco una profonda passione per la cybersecurity con l'esperienza nell'IT Project Management e nella docenza universitaria.",
+    "education": {
+      "title": "Istruzione",
+      "master_title": "Laurea Magistrale in Sicurezza Informatica",
+      "master_uni": "Università degli Studi di Milano (UNIMI)",
+      "master_desc": "Specializzazione in crittografia, sicurezza delle reti e gestione del rischio.",
+      "bachelor_title": "Laurea Triennale in Informatica",
+      "bachelor_uni": "Università degli Studi di Parma (UNIPR)",
+      "bachelor_desc": "Fondamenti di informatica, algoritmi e sviluppo software.",
+      "diploma_title": "Diploma Perito Informatico",
+      "diploma_uni": "ISII Marconi"
+    },
+    "experience": {
+      "title": "Esperienza Lavorativa",
+      "zefiro_title": "PMO & Technology Security",
+      "zefiro_company": "Zefiro NET",
+      "zefiro_date": "Nov 2025 - Presente",
+      "zefiro_desc": "Coordinamento PMO, gestione conformità NIS2/ISO 27001, analisi del rischio e Vulnerability Assessment.",
+      "prof_title": "Professore Universitario",
+      "prof_company": "Università degli Studi di Parma",
+      "prof_date": "Ott 2024 - Presente",
+      "prof_desc": "Docenza per corso trasversale da 3 CFU presso il Dipartimento di Scienze Matematiche, Fisiche e Informatiche.",
+      "amabile_title": "Project Manager IT",
+      "amabile_company": "Amabile Srl",
+      "amabile_date": "Giu 2024 - Nov 2025",
+      "amabile_desc": "Pianificazione architetture sicure, implementazione MFA, EDR e gestione progetti Agile.",
+      "idea_title": "PM – Full Stack Developer",
+      "idea_company": "4IDEA Srl",
+      "idea_date": "Dic 2021 - Giu 2024",
+      "idea_desc": "Sviluppo web/app PHP/JS, coordinamento team creativo e ottimizzazione SEO/Ads."
+    },
+    "skills_title": "Skill & Competenze",
+    "stats": {
+      "exp": "Anni Esperienza",
+      "projects": "Progetti",
+      "security": "Cybersecurity"
+    }
+  },
+  "projects": {
+    "title": "Progetti di Ricerca e Sviluppo",
+    "view_all": "GitHub",
+    "items": {
+      "smc": {
+        "title": "SMC in Genomics",
+        "desc": "Calcolo sicuro della Edit Distance in ambito genomico tramite Secure Multiparty Computation (SMC). Focus su privacy e performance."
+      },
+      "cti": {
+        "title": "Cyber Threat Intelligence System",
+        "desc": "Sistema basato su Honeypot e IBM QRadar SIEM per l'integrazione di feed MISP e difesa proattiva."
+      },
+      "viewer": {
+        "title": "VieweR (VR Mobile)",
+        "desc": "Applicazione VR per Android con Unity3D e Google Cardboard per tour virtuali immersivi."
+      },
+      "vfq": {
+        "title": "VFQ (iOS + AI)",
+        "desc": "App iOS in Swift con integrazione API ChatGPT per suggerimenti eventi basati su interessi e geolocalizzazione."
+      }
+    }
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati."
+  }
+}

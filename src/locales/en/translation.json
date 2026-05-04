@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Profile",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Securing the Future | Managing Innovation",
+    "subtitle": "Cybersecurity Expert, IT Project Manager, and University Professor. Specialized in technology security and strategic project management.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "profile_title": "Professional Profile",
+    "text": "Master's Degree in Cyber Security from the University of Milan and Bachelor's Degree in Computer Science from the University of Parma. Currently serving as PMO & Technology Security at Zefiro NET, managing strategic projects and compliance (NIS2, ISO 27001, GDPR). I combine a deep passion for cybersecurity with experience in IT Project Management and university teaching.",
+    "education": {
+      "title": "Education",
+      "master_title": "M.Sc. in Cyber Security",
+      "master_uni": "University of Milan (UNIMI)",
+      "master_desc": "Specialization in cryptography, network security, and risk management.",
+      "bachelor_title": "B.Sc. in Computer Science",
+      "bachelor_uni": "University of Parma (UNIPR)",
+      "bachelor_desc": "Fundamentals of computer science, algorithms, and software development.",
+      "diploma_title": "IT Diploma",
+      "diploma_uni": "ISII Marconi"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "zefiro_title": "PMO & Technology Security",
+      "zefiro_company": "Zefiro NET",
+      "zefiro_date": "Nov 2025 - Present",
+      "zefiro_desc": "PMO coordination, NIS2/ISO 27001 compliance management, risk analysis, and Vulnerability Assessment.",
+      "prof_title": "University Professor",
+      "prof_company": "University of Parma",
+      "prof_date": "Oct 2024 - Present",
+      "prof_desc": "Lecturer for a 3-credit course at the Department of Mathematical, Physical, and Computer Sciences.",
+      "amabile_title": "IT Project Manager",
+      "amabile_company": "Amabile Srl",
+      "amabile_date": "Jun 2024 - Nov 2025",
+      "amabile_desc": "Secure architecture planning, implementation of MFA, EDR, and Agile project management.",
+      "idea_title": "PM – Full Stack Developer",
+      "idea_company": "4IDEA Srl",
+      "idea_date": "Dec 2021 - Jun 2024",
+      "idea_desc": "PHP/JS web/app development, creative team coordination, and SEO/Ads optimization."
+    },
+    "skills_title": "Skills & Expertise",
+    "stats": {
+      "exp": "Years Experience",
+      "projects": "Projects",
+      "security": "Cybersecurity"
+    }
+  },
+  "projects": {
+    "title": "R&D Projects",
+    "view_all": "GitHub",
+    "items": {
+      "smc": {
+        "title": "SMC in Genomics",
+        "desc": "Secure calculation of Edit Distance in genomics via Secure Multiparty Computation (SMC). Focus on privacy and performance."
+      },
+      "cti": {
+        "title": "Cyber Threat Intelligence System",
+        "desc": "System based on Honeypots and IBM QRadar SIEM for MISP feed integration and proactive defense."
+      },
+      "viewer": {
+        "title": "VieweR (Mobile VR)",
+        "desc": "Android VR application using Unity3D and Google Cardboard SDK for immersive virtual tours."
+      },
+      "vfq": {
+        "title": "VFQ (iOS + AI)",
+        "desc": "iOS app in Swift integrating ChatGPT API for event suggestions based on interests and geolocation."
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
