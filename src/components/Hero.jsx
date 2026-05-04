@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import './Hero.css';
 
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   const { t } = useTranslation();
 
@@ -11,14 +13,20 @@ const Hero = () => {
         <div className="hero-content">
         <motion.h1 
           className="hero-title"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial="hidden"
+          animate="visible"
         >
-          {t('hero.tagline').split('|').map((part, index) => (
-            <span key={index} className={index === 0 ? "text-gradient" : ""}>
-              {part}{index === 0 && <br/>}
-            </span>
+          {t('hero.tagline').split(' ').map((name, index) => (
+            <motion.span 
+              key={index} 
+              className={index === 1 ? "text-outline" : "text-filled"}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: index * 0.2, ease: "easeOut" } }
+              }}
+            >
+              {name}
+            </motion.span>
           ))}
         </motion.h1>
         
@@ -37,12 +45,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <a href="#projects" className="btn btn-primary">
+          <Link to="/about" className="btn btn-secondary">
+            {t('nav.about')}
+          </Link>
+          <Link to="/projects" className="btn btn-primary">
             {t('hero.cta_projects')}
-          </a>
-          <a href="https://linkedin.com/in/lorenzo-frasconi" target="_blank" rel="noreferrer" className="btn btn-secondary">
-            {t('hero.cta_contact')}
-          </a>
+          </Link>
         </motion.div>
         </div>
       </div>

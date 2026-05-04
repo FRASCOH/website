@@ -7,15 +7,19 @@ import Projects from './components/Projects';
 import './components/Scene3D.css';
 import './App.css';
 
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className="app-wrapper">
       <Scene3D />
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Projects />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </main>
       <Footer />
     </div>
