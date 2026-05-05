@@ -178,4 +178,37 @@
     padding: 0.5rem 1.2rem;
     font-size: 0.65rem;
   }
+
+  .hero-main {
+    width: 100%;
+  }
+
+  .hero-character-floating {
+    top: -450% !important;
+    right: 30% !important;
+  }
+
+  .hero-character-floating img {
+    height: 220px !important;
+  }
+}
+
+.lorenzo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-character-floating {
+  position: absolute;
+  top: -60%;
+  right: -30%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.hero-character-floating img {
+  height: 360px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }

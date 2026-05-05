@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import lorenzoImg from '../images/lorenzo.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -18,13 +19,30 @@ const Hero = () => {
 
       <div className="content-container">
         <div className="hero-main">
-          <motion.h1 
+          <motion.h1
             className="hero-display-name"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Lorenzo<br/>Frasconi
+            <span className="lorenzo-wrapper">
+              Lorenzo
+              <motion.div
+                className="hero-character-floating"
+                animate={{
+                  y: [0, -20, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <img src={lorenzoImg} alt="Stylized Character" />
+              </motion.div>
+            </span>
+            <br />
+            Frasconi
           </motion.h1>
         </div>
 
