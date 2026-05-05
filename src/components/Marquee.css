@@ -11,8 +11,8 @@
   z-index: 10;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 .marquee-track {
@@ -53,6 +53,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(calc(-100% / 3));
   }

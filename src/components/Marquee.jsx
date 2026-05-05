@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Marquee.css';
 
 const Marquee = () => {
@@ -15,7 +16,13 @@ const Marquee = () => {
   const marqueeItems = [...items, ...items, ...items];
 
   return (
-    <div className="marquee-container">
+    <motion.div 
+      className="marquee-container"
+      initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
+      whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="marquee-track">
         {marqueeItems.map((item, index) => (
           <div key={index} className="marquee-item">
@@ -24,7 +31,7 @@ const Marquee = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

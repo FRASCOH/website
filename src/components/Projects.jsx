@@ -28,15 +28,40 @@ const Projects = () => {
     }
   ];
 
+  const headerVariants = {
+    hidden: { opacity: 0, x: -30, filter: 'blur(10px)' },
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      filter: 'blur(0px)',
+      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, filter: 'blur(15px)', scale: 0.95 },
+    visible: (i) => ({ 
+      opacity: 1, 
+      y: 0, 
+      filter: 'blur(0px)', 
+      scale: 1,
+      transition: { 
+        duration: 1, 
+        delay: i * 0.15,
+        ease: [0.16, 1, 0.3, 1] 
+      }
+    })
+  };
+
   return (
     <section className="projects-section" id="projects">
       <div className="content-container">
         <motion.div 
           className="projects-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={headerVariants}
         >
           <h2 className="section-title text-gradient">{t('projects.title')}</h2>
           <a href="https://github.com/FRASCOH" target="_blank" rel="noreferrer" className="btn btn-secondary">
@@ -49,10 +74,11 @@ const Projects = () => {
             <motion.div 
               key={project.id}
               className="project-giant-card glass-panel"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={cardVariants}
             >
               <div className="project-giant-content">
                 <h3 className="project-giant-title">{t(`projects.items.${project.id}.title`)}</h3>

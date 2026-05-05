@@ -196,6 +196,7 @@
 .lorenzo-wrapper {
   position: relative;
   display: inline-block;
+  will-change: transform, opacity, filter;
 }
 
 .hero-character-floating {
@@ -204,6 +205,8 @@
   left: 100%;
   z-index: 15;
   pointer-events: none;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
 }
 
 .hero-character-floating img {
@@ -211,4 +214,13 @@
   width: auto;
   display: block;
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+  backface-visibility: hidden;
+}
+
+.hero-display-name,
+.hero-bio-short,
+.hero-badges-stack,
+.hero-top-left,
+.hero-scroll-indicator {
+  will-change: transform, opacity, filter;
 }
