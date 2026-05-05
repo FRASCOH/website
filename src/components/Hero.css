@@ -17,7 +17,7 @@
 }
 
 .hero-top-left {
-  position: absolute;
+  /*position: absolute;*/
   top: 4rem;
   left: 4rem;
   font-size: 0.8rem;
@@ -146,7 +146,7 @@
   .hero-display-name {
     font-size: clamp(3.5rem, 18vw, 6rem);
     line-height: 0.88;
-    margin-top: 3rem;
+    margin-top: 1rem;
     word-break: break-word;
     hyphens: auto;
   }
