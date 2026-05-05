@@ -58,13 +58,20 @@
   }
 }
 
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
-  .marquee-text {
-    font-size: 1rem;
-    padding: 0 1.5rem;
-  }
   .marquee-container {
-    margin: 4rem 0;
-    padding: 1.5rem 0;
+    margin: 3rem 0;
+    padding: 1.2rem 0;
+  }
+
+  .marquee-text {
+    font-size: 0.85rem;
+    padding: 0 1.2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .marquee-separator {
+    font-size: 0.85rem;
   }
 }

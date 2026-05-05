@@ -75,6 +75,11 @@
     }
   },
   "footer": {
+    "cta_sub": "GET IN TOUCH",
+    "cta_main": "Say Hi",
+    "location_label": "LOCATION",
+    "location_value": "Italy",
+    "social_label": "SOCIAL",
     "rights": "All rights reserved."
   }
 }

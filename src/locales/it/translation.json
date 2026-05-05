@@ -75,6 +75,11 @@
     }
   },
   "footer": {
+    "cta_sub": "METTITI IN CONTATTO",
+    "cta_main": "Scrivimi",
+    "location_label": "POSIZIONE",
+    "location_value": "Italia",
+    "social_label": "SOCIAL",
     "rights": "Tutti i diritti riservati."
   }
 }

@@ -32,8 +32,8 @@ const About = () => {
             <h3 className="editorial-title font-mono">{t('about.profile_title')}</h3>
             <p className="oversized-text" dangerouslySetInnerHTML={{ __html: t('about.text') }}></p>
             <div className="cv-container">
-              <a href="/CV_Lorenzo_Frasconi.pdf" target="_blank" className="view-cv-link font-mono">
-                VIEW CV ↗
+              <a href="https://linkedin.com/in/lorenzo-frasconi" target="_blank" rel="noreferrer" className="view-cv-link font-mono">
+                VIEW LINKEDIN ↗
               </a>
             </div>
           </motion.div>

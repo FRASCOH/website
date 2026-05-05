@@ -77,39 +77,60 @@
   cursor: pointer;
 }
 
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
   .pill-nav {
     top: 1rem;
     right: 1rem;
+    left: 1rem;
+  }
+
+  .glass-pill {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0.4rem 1rem;
   }
 
   .nav-links {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     flex-direction: column;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(20px);
+    justify-content: center;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.97);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     padding: 2rem;
-    border-radius: 12px;
-    margin-top: 0.5rem;
-    border: 1px solid var(--glass-border);
-    gap: 1.5rem;
-    text-align: center;
+    gap: 2rem;
+    z-index: 999;
   }
-  
+
   .nav-links a {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
   }
-  
+
+  .nav-links a:hover {
+    color: var(--accent-neon);
+  }
+
   .nav-links.open {
     display: flex;
   }
-  
+
   .mobile-menu-btn {
     display: block;
+    z-index: 1001;
+  }
+
+  .lang-toggle .lang-text {
+    display: none;
   }
 }

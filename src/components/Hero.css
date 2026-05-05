@@ -117,44 +117,65 @@
   box-shadow: 0 0 10px var(--accent-neon);
 }
 
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem;
-    justify-content: flex-start;
-    padding-top: 8rem;
+    padding: 1.5rem;
+    padding-top: 6rem;
+    height: 100vh;
+    height: 100dvh;
+    justify-content: flex-end;
   }
-  
+
   .hero-top-left {
-    top: 2rem;
-    left: 2rem;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 0.65rem;
   }
-  
+
   .hero-scroll-indicator {
-    display: none;
+    top: auto;
+    bottom: 3rem;
+    right: 1.5rem;
   }
-  
+
+  .scroll-line {
+    height: 50px;
+  }
+
   .hero-display-name {
-    font-size: 5rem;
+    font-size: clamp(3.5rem, 18vw, 6rem);
+    line-height: 0.88;
+    margin-top: 3rem;
+    word-break: break-word;
+    hyphens: auto;
   }
-  
+
   .hero-bottom {
     position: relative;
-    bottom: 0;
+    bottom: auto;
     left: 0;
     right: 0;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3rem;
-    margin-top: 4rem;
+    gap: 2.5rem;
+    margin-top: 3rem;
   }
-  
+
+  .hero-bio-short {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
   .hero-badges-stack {
     align-items: flex-start;
-    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  
+
   .badge-pill {
-    width: 100%;
-    justify-content: space-between;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.65rem;
   }
 }
