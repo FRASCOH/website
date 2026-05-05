@@ -3,8 +3,6 @@ import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import './Header.css';
 
-import { Link } from 'react-router-dom';
-
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,18 +13,18 @@ const Header = () => {
   };
 
   return (
-    <header className="header glass-panel">
-      <div className="header-container">
+    <header className="header pill-nav">
+      <div className="header-container glass-pill">
         <div className="logo">
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+          <a href="#home" onClick={() => setIsMenuOpen(false)}>
             <span className="text-gradient font-mono">LF.</span>
-          </Link>
+          </a>
         </div>
 
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</Link>
-          <Link to="/about" onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</Link>
-          <Link to="/projects" onClick={() => setIsMenuOpen(false)}>{t('nav.projects')}</Link>
+          <a href="#home" onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</a>
+          <a href="#projects" onClick={() => setIsMenuOpen(false)}>{t('nav.projects')}</a>
           <a href="mailto:lorenzo.frasconi99@gmail.com" onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</a>
         </nav>
 

@@ -2,56 +2,49 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import './Hero.css';
 
-import { Link } from 'react-router-dom';
-
 const Hero = () => {
   const { t } = useTranslation();
 
   return (
     <section className="hero" id="home">
+      <div className="hero-top-left font-mono">
+        PMO & TECHNOLOGY SECURITY
+      </div>
+
+      <div className="hero-scroll-indicator font-mono">
+        <span>SCROLL</span>
+        <div className="scroll-line"></div>
+      </div>
+
       <div className="content-container">
-        <div className="hero-content">
-        <motion.h1 
-          className="hero-title"
-          initial="hidden"
-          animate="visible"
-        >
-          {t('hero.tagline').split(' ').map((name, index) => (
-            <motion.span 
-              key={index} 
-              className={index === 1 ? "text-outline" : "text-filled"}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: index * 0.2, ease: "easeOut" } }
-              }}
-            >
-              {name}
-            </motion.span>
-          ))}
-        </motion.h1>
-        
-        <motion.p 
-          className="hero-subtitle font-mono"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          {t('hero.subtitle')}
-        </motion.p>
-        
-        <motion.div 
-          className="hero-cta"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <Link to="/about" className="btn btn-secondary">
-            {t('nav.about')}
-          </Link>
-          <Link to="/projects" className="btn btn-primary">
-            {t('hero.cta_projects')}
-          </Link>
-        </motion.div>
+        <div className="hero-main">
+          <motion.h1 
+            className="hero-display-name"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            Lorenzo<br/>Frasconi
+          </motion.h1>
+        </div>
+
+        <div className="hero-bottom">
+          <div className="hero-bio-short">
+            <p>{t('hero.subtitle')}</p>
+          </div>
+
+          <div className="hero-badges-stack">
+            <div className="badge-pill available">
+              <span className="dot"></span>
+              AVAILABLE FOR WORK
+            </div>
+            <div className="badge-pill">
+              MILAN, ITALY
+            </div>
+            <div className="badge-pill">
+              M.SC. CYBERSECURITY
+            </div>
+          </div>
         </div>
       </div>
     </section>

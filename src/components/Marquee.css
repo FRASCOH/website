@@ -1,0 +1,70 @@
+.marquee-container {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 60s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0 3rem;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.marquee-text:hover {
+  opacity: 1;
+  color: var(--accent-neon);
+}
+
+.marquee-separator {
+  font-size: 1.5rem;
+  color: var(--accent-neon);
+  opacity: 0.2;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-text {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+  .marquee-container {
+    margin: 4rem 0;
+    padding: 1.5rem 0;
+  }
+}

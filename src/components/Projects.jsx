@@ -44,30 +44,32 @@ const Projects = () => {
           </a>
         </motion.div>
 
-        <div className="projects-grid">
+        <div className="projects-list-giant">
           {projectsList.map((project, index) => (
             <motion.div 
               key={project.id}
-              className="project-card glass-panel"
-              initial={{ opacity: 0, y: 30 }}
+              className="project-giant-card glass-panel"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <div className="project-header">
-                <h3>{t(`projects.items.${project.id}.title`)}</h3>
-                {(project.github || (project.demo && project.demo !== '#')) && (
-                  <div className="project-links">
-                    {project.github && <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub"><CodeXml size={20} /></a>}
-                    {project.demo && project.demo !== '#' && <a href={project.demo} target="_blank" rel="noreferrer" aria-label="Demo"><ExternalLink size={20} /></a>}
+              <div className="project-giant-content">
+                <h3 className="project-giant-title">{t(`projects.items.${project.id}.title`)}</h3>
+                <p className="project-giant-desc">{t(`projects.items.${project.id}.desc`)}</p>
+                <div className="project-giant-footer">
+                  <div className="project-tags">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="tag-capsule">{tag}</span>
+                    ))}
                   </div>
-                )}
-              </div>
-              <p>{t(`projects.items.${project.id}.desc`)}</p>
-              <div className="project-tags">
-                {project.tags.map(tag => (
-                  <span key={tag} className="tag font-mono">{tag}</span>
-                ))}
+                  {(project.github || (project.demo && project.demo !== '#')) && (
+                    <div className="project-giant-links">
+                      {project.github && <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub"><CodeXml size={28} /></a>}
+                      {project.demo && project.demo !== '#' && <a href={project.demo} target="_blank" rel="noreferrer" aria-label="Demo"><ExternalLink size={28} /></a>}
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

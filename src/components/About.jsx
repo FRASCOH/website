@@ -21,97 +21,67 @@ const About = () => {
           {t('about.title')}
         </motion.h2>
 
-        <div className="about-grid">
-          {/* Colonna Sinistra: Bio, Stats, Skill e ORA Istruzione per bilanciare */}
-          <div className="about-column">
-            <motion.div 
-              className="bio-card glass-panel"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="font-mono">{t('about.profile_title')}</h3>
-              <p>{t('about.text')}</p>
-              
-              <div className="about-stats">
-                <div className="stat-item">
-                  <span className="stat-number">4+</span>
-                  <span className="stat-label">{t('about.stats.exp')}</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">15+</span>
-                  <span className="stat-label">{t('about.stats.projects')}</span>
-                </div>
-                <div className="stat-item">
-                  <span className="stat-number">M.Sc.</span>
-                  <span className="stat-label">{t('about.stats.security')}</span>
-                </div>
-              </div>
-            </motion.div>
+        <div className="about-editorial">
+          <motion.div 
+            className="editorial-bio-block"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="editorial-title font-mono">{t('about.profile_title')}</h3>
+            <p className="oversized-text">{t('about.text')}</p>
+            <div className="cv-container">
+              <a href="/CV_Lorenzo_Frasconi.pdf" target="_blank" className="view-cv-link font-mono">
+                VIEW CV ↗
+              </a>
+            </div>
+          </motion.div>
 
+          <div className="editorial-sections">
             <motion.div 
-              className="skills-section glass-panel"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3 className="font-mono">{t('about.skills_title')}</h3>
-              <div className="skills-grid">
-                <span className="skill-badge">NIS2 / ISO 27001</span>
-                <span className="skill-badge">Risk Management</span>
-                <span className="skill-badge">SIEM / QRadar</span>
-                <span className="skill-badge">Ethical Hacking</span>
-                <span className="skill-badge">Agile / Scrum</span>
-                <span className="skill-badge">PHP / JavaScript / C++</span>
-                <span className="skill-badge">Python / SQL</span>
-                <span className="skill-badge">Cloud Security</span>
-              </div>
-            </motion.div>
-
-            {/* Spostato qui per allineamento perfetto */}
-            <motion.div 
-              className="education-section glass-panel"
+              className="editorial-experience"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="font-mono">{t('about.education.title')}</h3>
-              <div className="education-list">
-                {education.map((edu, index) => (
-                  <div key={edu} className="edu-item-simple">
-                    <h4>{t(`about.education.${edu}_title`)}</h4>
-                    <span className="edu-uni">{t(`about.education.${edu}_uni`)}</span>
+              <h3 className="editorial-title font-mono">{t('about.experience.title')}</h3>
+              <div className="clean-list">
+                {experiences.map((exp) => (
+                  <div key={exp} className="clean-list-item">
+                    <div className="item-meta">
+                      <span className="item-date font-mono">{t(`about.experience.${exp}_date`)}</span>
+                      <span className="item-company text-gradient">{t(`about.experience.${exp}_company`)}</span>
+                    </div>
+                    <div className="item-content">
+                      <h4 className="item-title">{t(`about.experience.${exp}_title`)}</h4>
+                      <p className="item-desc">{t(`about.experience.${exp}_desc`)}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </motion.div>
-          </div>
 
-          {/* Colonna Destra: Solo Esperienza Lavorativa (che è la parte più corposa) */}
-          <div className="about-column">
-            <h3 className="column-title font-mono">{t('about.experience.title')}</h3>
-            <div className="experience-list">
-              {experiences.map((exp, index) => (
-                <motion.div 
-                  key={exp}
-                  className="exp-item glass-panel"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className="exp-header">
-                    <h4>{t(`about.experience.${exp}_title`)}</h4>
-                    <span className="exp-date font-mono">{t(`about.experience.${exp}_date`)}</span>
+            <motion.div 
+              className="editorial-education"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h3 className="editorial-title font-mono">{t('about.education.title')}</h3>
+              <div className="clean-list">
+                {education.map((edu) => (
+                  <div key={edu} className="clean-list-item">
+                    <div className="item-content">
+                      <h4 className="item-title">{t(`about.education.${edu}_title`)}</h4>
+                      <span className="item-company">{t(`about.education.${edu}_uni`)}</span>
+                    </div>
                   </div>
-                  <span className="exp-company text-gradient">{t(`about.experience.${exp}_company`)}</span>
-                  <p className="exp-desc">{t(`about.experience.${exp}_desc`)}</p>
-                </motion.div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

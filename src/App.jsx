@@ -2,12 +2,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Scene3D from './components/Scene3D';
 import Hero from './components/Hero';
+import Marquee from './components/Marquee';
 import About from './components/About';
 import Projects from './components/Projects';
 import './components/Scene3D.css';
 import './App.css';
-
-import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,11 +14,10 @@ function App() {
       <Scene3D />
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
+        <Hero />
+        <Marquee />
+        <About />
+        <Projects />
       </main>
       <Footer />
     </div>
