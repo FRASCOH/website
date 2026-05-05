@@ -25,7 +25,7 @@ const Header = () => {
           <a href="#home" onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</a>
           <a href="#about" onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</a>
           <a href="#projects" onClick={() => setIsMenuOpen(false)}>{t('nav.projects')}</a>
-          <a href="mailto:lorenzo.frasconi99@gmail.com" onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</a>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</a>
         </nav>
 
         <div className="header-actions">
@@ -33,7 +33,7 @@ const Header = () => {
             <Globe size={18} />
             <span className="lang-text">{i18n.language.toUpperCase()}</span>
           </button>
-          
+
           <button className="mobile-menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
