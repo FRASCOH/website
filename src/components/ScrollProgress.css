@@ -1,0 +1,73 @@
+.scroll-progress-container {
+  position: fixed;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
+  width: 2px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scroll-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-neon);
+  box-shadow: 0 0 10px var(--accent-neon);
+  transform-origin: top;
+}
+
+.section-markers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.marker-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transform: translateX(-50%);
+}
+
+.marker-dot {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.marker-label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Active state logic would normally use IntersectionObserver, 
+   but for visual aesthetic we keep them subtle */
+
+@media (max-width: 1024px) {
+  .scroll-progress-container {
+    display: none;
+  }
+}

@@ -1,0 +1,46 @@
+.custom-cursor-wrapper {
+  position: fixed;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-wrapper.hidden {
+  opacity: 0;
+}
+
+.cursor-text {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-neon);
+  letter-spacing: 2px;
+  font-weight: 900;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  white-space: nowrap;
+  z-index: 100;
+}
+
+/* System Cursor Handling */
+body {
+  cursor: auto;
+}
+
+a, button, .clickable, .hero-character-trigger {
+  cursor: pointer !important;
+}
+
+/* Fallback for mobile */
+@media (max-width: 768px) {
+  .custom-cursor-wrapper {
+    display: none;
+  }
+}

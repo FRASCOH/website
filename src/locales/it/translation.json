@@ -7,7 +7,7 @@
   },
   "hero": {
     "tagline": "Lorenzo Frasconi",
-    "subtitle": "Esperto in Cybersecurity, IT Project Manager e Professore Universitario. Specializzato in sicurezza informatica e gestione di progetti strategici.",
+    "subtitle": "and that's the way the cookie crumbles",
     "cta_projects": "Vedi Progetti",
     "cta_contact": "Contattami"
   },
@@ -29,21 +29,21 @@
     "experience": {
       "title": "Esperienza Lavorativa",
       "zefiro_title": "PMO & Technology Security",
-      "zefiro_company": "Zefiro NET",
+      "zefiro_company": "Zefiro Net srl",
       "zefiro_date": "Nov 2025 - Presente",
-      "zefiro_desc": "Coordinamento PMO, gestione conformità NIS2/ISO 27001, analisi del rischio e Vulnerability Assessment.",
+      "zefiro_desc": "Gestione e supervisione dei progetti IT& CyberSecurity, Analisi del rischio, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
       "prof_title": "Professore Universitario",
       "prof_company": "Università degli Studi di Parma",
       "prof_date": "Ott 2024 - Presente",
       "prof_desc": "Docenza per corso trasversale da 3 CFU presso il Dipartimento di Scienze Matematiche, Fisiche e Informatiche.",
       "amabile_title": "Project Manager IT",
-      "amabile_company": "Amabile Srl",
+      "amabile_company": "Amabile srl",
       "amabile_date": "Giu 2024 - Nov 2025",
-      "amabile_desc": "Pianificazione architetture sicure, implementazione MFA, EDR e gestione progetti Agile.",
+      "amabile_desc": "Re-platforming infrastruttura digitale, implementazione MFA, gestione fornitori IT per software integration, gestione progetti Agile.",
       "idea_title": "PM – Full Stack Developer",
-      "idea_company": "4IDEA Srl",
+      "idea_company": "4IDEA srl",
       "idea_date": "Dic 2021 - Giu 2024",
-      "idea_desc": "Sviluppo web/app PHP/JS, coordinamento team creativo e ottimizzazione SEO/Ads."
+      "idea_desc": "Sviluppo web con CMS Wordpress, Shopify, Magento, Prestashop, coordinamento team creativo e ottimizzazione SEO/Ads."
     },
     "skills_title": "Skill & Competenze",
     "stats": {
@@ -81,5 +81,11 @@
     "location_value": "Italia",
     "social_label": "SOCIAL",
     "rights": "Tutti i diritti riservati."
+  },
+  "cursor": {
+    "open": "APRI",
+    "go": "VAI",
+    "translate": "TRADUCI",
+    "discover": "SCOPRI CHI SONO"
   }
 }

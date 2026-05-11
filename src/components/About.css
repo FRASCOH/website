@@ -13,7 +13,6 @@
 }
 
 .editorial-bio-block {
-  max-width: 900px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -117,8 +116,14 @@
 
 .education-uni {
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: var(--accent-neon);
   letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.education-uni:hover {
+  opacity: 0.7;
 }
 
 .item-meta {
@@ -135,6 +140,12 @@
 .item-company {
   font-weight: 700;
   font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.item-company:hover {
+  opacity: 0.7;
 }
 
 .item-title {

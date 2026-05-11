@@ -1,110 +1,131 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import './About.css';
 
+const AboutItem = ({ children }) => {
+  const itemRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: itemRef,
+    offset: ["start end", "center center", "end start"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  const opacity = useTransform(smoothProgress, [0.05, 0.15, 0.85, 0.95], [0, 1, 1, 0]);
+  const y = useTransform(smoothProgress, [0.05, 0.15, 0.85, 0.95], [30, 0, 0, -30]);
+  const blur = useTransform(smoothProgress, [0.05, 0.15, 0.85, 0.95], ["blur(8px)", "blur(0px)", "blur(0px)", "blur(8px)"]);
+
+  return (
+    <motion.div ref={itemRef} style={{ opacity, y, filter: blur }}>
+      {children}
+    </motion.div>
+  );
+};
+
 const About = () => {
   const { t } = useTranslation();
+  const sectionRef = useRef(null);
 
   const experiences = ['zefiro', 'prof', 'amabile', 'idea'];
   const education = ['master', 'bachelor', 'diploma'];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+  const experienceLinks = {
+    zefiro: "https://it.wikipedia.org/wiki/Zefiro_Net",
+    prof: "https://personale.unipr.it/it/ugovdocenti/person/224780",
+    amabile: "https://amabilejewels.it/",
+    idea: "https://4idea.it/"
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      filter: 'blur(0px)',
-      transition: { 
-        duration: 0.8, 
-        ease: [0.16, 1, 0.3, 1] 
-      }
-    }
+  const educationLinks = {
+    master: "https://www.unimi.it/it",
+    bachelor: "https://www.unipr.it/",
+    diploma: "https://www.isii.it/"
   };
 
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="about" ref={sectionRef}>
       <div className="content-container">
-        <motion.h2 
-          className="section-title text-gradient"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {t('about.title')}
-        </motion.h2>
+        <AboutItem>
+          <h2 className="section-title text-gradient">
+            {t('about.title')}
+          </h2>
+        </AboutItem>
 
         <div className="about-editorial">
-          <motion.div 
-            className="editorial-bio-block"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-          >
-            <motion.h3 variants={itemVariants} className="editorial-title font-mono">{t('about.profile_title')}</motion.h3>
-            <motion.p variants={itemVariants} className="oversized-text" dangerouslySetInnerHTML={{ __html: t('about.text') }}></motion.p>
-            <motion.div variants={itemVariants} className="cv-container">
-              <a href="https://linkedin.com/in/lorenzo-frasconi" target="_blank" rel="noreferrer" className="view-cv-link font-mono">
-                VIEW LINKEDIN ↗
-              </a>
-            </motion.div>
-          </motion.div>
+          <div className="editorial-bio-block">
+            <AboutItem>
+              <h3 className="editorial-title font-mono">{t('about.profile_title')}</h3>
+            </AboutItem>
+            <AboutItem>
+              <p className="oversized-text" dangerouslySetInnerHTML={{ __html: t('about.text') }}></p>
+            </AboutItem>
+            <AboutItem>
+              <div className="cv-container">
+                <a href="https://linkedin.com/in/lorenzo-frasconi" target="_blank" rel="noreferrer" className="view-cv-link font-mono">
+                  VIEW LINKEDIN ↗
+                </a>
+              </div>
+            </AboutItem>
+          </div>
 
           <div className="editorial-sections">
-            <motion.div 
-              className="editorial-experience"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={containerVariants}
-            >
-              <motion.h3 variants={itemVariants} className="editorial-title font-mono">{t('about.experience.title')}</motion.h3>
+            <div className="editorial-experience">
+              <AboutItem>
+                <h3 className="editorial-title font-mono">{t('about.experience.title')}</h3>
+              </AboutItem>
               <div className="clean-list">
                 {experiences.map((exp) => (
-                  <motion.div key={exp} variants={itemVariants} className="clean-list-item">
-                    <div className="item-meta">
-                      <span className="item-date font-mono">{t(`about.experience.${exp}_date`)}</span>
-                      <span className="item-company text-gradient">{t(`about.experience.${exp}_company`)}</span>
+                  <AboutItem key={exp}>
+                    <div className="clean-list-item">
+                      <div className="item-meta">
+                        <span className="item-date font-mono">{t(`about.experience.${exp}_date`)}</span>
+                        <a
+                          href={experienceLinks[exp]}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="item-company text-gradient clickable"
+                        >
+                          {t(`about.experience.${exp}_company`)}
+                        </a>
+                      </div>
+                      <div className="item-content">
+                        <h4 className="item-title">{t(`about.experience.${exp}_title`)}</h4>
+                        <p className="item-desc">{t(`about.experience.${exp}_desc`)}</p>
+                      </div>
                     </div>
-                    <div className="item-content">
-                      <h4 className="item-title">{t(`about.experience.${exp}_title`)}</h4>
-                      <p className="item-desc">{t(`about.experience.${exp}_desc`)}</p>
-                    </div>
-                  </motion.div>
+                  </AboutItem>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="editorial-education"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={containerVariants}
-            >
-              <motion.h3 variants={itemVariants} className="editorial-title font-mono">{t('about.education.title')}</motion.h3>
+            <div className="editorial-education">
+              <AboutItem>
+                <h3 className="editorial-title font-mono">{t('about.education.title')}</h3>
+              </AboutItem>
               <div className="education-list-rows">
                 {education.map((edu) => (
-                  <motion.div key={edu} variants={itemVariants} className="education-row">
-                    <h4 className="education-degree">{t(`about.education.${edu}_title`)}</h4>
-                    <div className="education-spacer"></div>
-                    <span className="education-uni font-mono">{t(`about.education.${edu}_uni`)}</span>
-                  </motion.div>
+                  <AboutItem key={edu}>
+                    <div className="education-row">
+                      <h4 className="education-degree">{t(`about.education.${edu}_title`)}</h4>
+                      <div className="education-spacer"></div>
+                      <a 
+                        href={educationLinks[edu]} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="education-uni font-mono clickable"
+                      >
+                        {t(`about.education.${edu}_uni`)}
+                      </a>
+                    </div>
+                  </AboutItem>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

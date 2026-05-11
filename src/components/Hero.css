@@ -36,6 +36,21 @@
   align-items: center;
   gap: 1rem;
   z-index: 20;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+  transform: translateY(10px);
+}
+
+.hero-scroll-indicator:hover span {
+  color: var(--accent-neon);
+}
+
+.hero-scroll-indicator:hover .scroll-line {
+  background: var(--accent-neon);
+  height: 100px;
 }
 
 .hero-scroll-indicator span {
@@ -43,12 +58,14 @@
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .scroll-line {
   width: 1px;
   height: 80px;
   background: linear-gradient(to bottom, var(--accent-neon), transparent);
+  transition: all 0.3s ease;
 }
 
 .hero-display-name {
@@ -204,7 +221,7 @@
   top: -60%;
   left: 100%;
   z-index: 15;
-  pointer-events: none;
+  pointer-events: auto;
   will-change: transform, opacity;
   transform-style: preserve-3d;
 }

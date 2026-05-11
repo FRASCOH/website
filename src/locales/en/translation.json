@@ -7,14 +7,14 @@
   },
   "hero": {
     "tagline": "Lorenzo Frasconi",
-    "subtitle": "Cybersecurity Expert, IT Project Manager, and University Professor. Specialized in technology security and strategic project management.",
+    "subtitle": "and that's the way the cookie crumbles",
     "cta_projects": "View Projects",
     "cta_contact": "Contact Me"
   },
   "about": {
     "title": "About Me",
     "profile_title": "Professional Profile",
-    "text": "Master's Degree in Cyber Security from the University of Milan and Bachelor's Degree in Computer Science from the University of Parma. Currently serving as PMO & Technology Security at Zefiro NET, managing strategic projects and compliance (NIS2, ISO 27001, GDPR). I combine a deep passion for cybersecurity with experience in IT Project Management and university teaching.",
+    "text": "Master's Degree in <strong>Cyber Security</strong> from the University of Milan and Bachelor's Degree in Computer Science from the University of Parma. Currently serving as <strong>PMO & Technology Security</strong> at Zefiro NET, managing strategic projects and compliance (<strong>NIS2, ISO 27001, GDPR</strong>). I combine a deep passion for <strong>cybersecurity</strong> with experience in <strong>IT Project Management</strong> and university teaching.",
     "education": {
       "title": "Education",
       "master_title": "M.Sc. in Cyber Security",
@@ -29,21 +29,21 @@
     "experience": {
       "title": "Work Experience",
       "zefiro_title": "PMO & Technology Security",
-      "zefiro_company": "Zefiro NET",
+      "zefiro_company": "Zefiro Net srl",
       "zefiro_date": "Nov 2025 - Present",
-      "zefiro_desc": "PMO coordination, NIS2/ISO 27001 compliance management, risk analysis, and Vulnerability Assessment.",
+      "zefiro_desc": "Management and supervision of IT & CyberSecurity projects, Risk Analysis, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
       "prof_title": "University Professor",
       "prof_company": "University of Parma",
       "prof_date": "Oct 2024 - Present",
       "prof_desc": "Lecturer for a 3-credit course at the Department of Mathematical, Physical, and Computer Sciences.",
       "amabile_title": "IT Project Manager",
-      "amabile_company": "Amabile Srl",
+      "amabile_company": "Amabile srl",
       "amabile_date": "Jun 2024 - Nov 2025",
-      "amabile_desc": "Secure architecture planning, implementation of MFA, EDR, and Agile project management.",
+      "amabile_desc": "Digital infrastructure re-platforming, MFA implementation, IT vendor management for software integration, Agile project management.",
       "idea_title": "PM – Full Stack Developer",
-      "idea_company": "4IDEA Srl",
+      "idea_company": "4IDEA srl",
       "idea_date": "Dec 2021 - Jun 2024",
-      "idea_desc": "PHP/JS web/app development, creative team coordination, and SEO/Ads optimization."
+      "idea_desc": "Web/app development with CMS Wordpress, Shopify, Magento, Prestashop, creative team coordination, and SEO/Ads optimization."
     },
     "skills_title": "Skills & Expertise",
     "stats": {
@@ -66,7 +66,7 @@
       },
       "viewer": {
         "title": "VieweR (Mobile VR)",
-        "desc": "Android VR application using Unity3D and Google Cardboard SDK for immersive virtual tours."
+        "desc": "Android VR application using Unity3D and Google Cardboard for immersive virtual tours."
       },
       "acn": {
         "title": "Monitor ACN NIS2",
@@ -76,10 +76,16 @@
   },
   "footer": {
     "cta_sub": "GET IN TOUCH",
-    "cta_main": "Say Hi",
+    "cta_main": "Email Me",
     "location_label": "LOCATION",
     "location_value": "Italy",
     "social_label": "SOCIAL",
     "rights": "All rights reserved."
+  },
+  "cursor": {
+    "open": "OPEN",
+    "go": "GO",
+    "translate": "TRANSLATE",
+    "discover": "DISCOVER ME"
   }
 }
