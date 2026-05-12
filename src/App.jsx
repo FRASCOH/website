@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import CustomCursor from './components/CustomCursor';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,10 +11,13 @@ import Projects from './components/Projects';
 import Terminal from './components/Terminal';
 import Preloader from './components/Preloader';
 import ScrollProgress from './components/ScrollProgress';
+import MatrixRain from './components/MatrixRain';
+import { HackerProvider, useHackerMode } from './context/HackerContext';
 import './components/Scene3D.css';
 import './App.css';
 
-function App() {
+function AppContent() {
+  const { isHackerMode, isTransitioning } = useHackerMode();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -26,11 +29,17 @@ function App() {
   }, []);
 
   return (
-    <div className="app-wrapper">
+    <motion.div 
+      className="app-wrapper"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isTransitioning ? 0 : 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <AnimatePresence>
         {isLoading && <Preloader />}
       </AnimatePresence>
       <ScrollProgress />
+      {isHackerMode && <MatrixRain />}
       <div className="noise-overlay"></div>
       <CustomCursor />
       <Scene3D />
@@ -43,7 +52,15 @@ function App() {
       </main>
       <Footer />
       <Terminal />
-    </div>
+    </motion.div>
+  );
+}
+
+function App() {
+  return (
+    <HackerProvider>
+      <AppContent />
+    </HackerProvider>
   );
 }
 

@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useHackerMode } from '../context/HackerContext';
 import './Terminal.css';
 
 const Terminal = () => {
+  const { setIsHackerMode } = useHackerMode();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([
@@ -52,7 +54,7 @@ const Terminal = () => {
 
       switch (cmd) {
         case 'help':
-          newHistory.push({ type: 'output', content: 'Available commands: about, skills, contact, clear, exit, whoami' });
+          newHistory.push({ type: 'output', content: 'Available commands: about, skills, contact, clear, exit, whoami, exploit, restore' });
           break;
         case 'about':
           newHistory.push({ type: 'output', content: 'Lorenzo Frasconi: Cybersecurity Expert & IT Project Manager. Specialized in risk analysis and secure infrastructures.' });
@@ -68,6 +70,16 @@ const Terminal = () => {
           break;
         case 'login':
           newHistory.push({ type: 'output', content: 'login done' });
+          break;
+        case 'exploit':
+          newHistory.push({ type: 'output', content: 'SYSTEM BREACHED. INITIALIZING ROOT_MODE...' });
+          setIsHackerMode(true);
+          setTimeout(() => setIsOpen(false), 1000);
+          break;
+        case 'restore':
+          newHistory.push({ type: 'output', content: 'RESTORING SYSTEM INTEGRITY... SECURITY PATCHES APPLIED.' });
+          setIsHackerMode(false);
+          setTimeout(() => setIsOpen(false), 1000);
           break;
         case 'clear':
           setHistory([]);

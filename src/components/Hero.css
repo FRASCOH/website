@@ -241,3 +241,41 @@
 .hero-scroll-indicator {
   will-change: transform, opacity, filter;
 }
+/* Hacker Mode Press Interaction */
+.press-progress-ring {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  transform: rotate(-90deg);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hero-character-trigger.pressing {
+  transform: scale(0.95);
+  filter: brightness(1.2);
+}
+
+/* Hacker Mode Global Theming */
+:root {
+  --hacker-green: #00ff88;
+  --hacker-bg: #050a05;
+}
+
+body.hacker-mode {
+  --accent-neon: var(--hacker-green);
+  --bg-dark: var(--hacker-bg);
+  background-color: var(--bg-dark);
+}
+
+body.hacker-mode .text-gradient {
+  background: linear-gradient(135deg, #00ff88 0%, #00ccff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+body.hacker-mode .noise-overlay {
+  opacity: 0.08; /* More visible noise in hacker mode */
+}

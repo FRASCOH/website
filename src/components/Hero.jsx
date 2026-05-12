@@ -1,11 +1,46 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import { useHackerMode } from '../context/HackerContext';
 import lorenzoImg from '../images/lorenzo.png';
+import lorenzoHackImg from '../images/lorenzo_hack.png';
 import './Hero.css';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const { isHackerMode, setIsHackerMode, toLeet } = useHackerMode();
+
+  const [isPressing, setIsPressing] = useState(false);
+  const [pressProgress, setPressProgress] = useState(0);
+  const pressTimer = useRef(null);
+  const progressInterval = useRef(null);
+
+  const handlePressStart = (e) => {
+    setIsPressing(true);
+    setPressProgress(0);
+    
+    const startTime = Date.now();
+    progressInterval.current = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min((elapsed / 2000) * 100, 100);
+      setPressProgress(progress);
+    }, 30);
+
+    pressTimer.current = setTimeout(() => {
+      setIsHackerMode(!isHackerMode);
+      setIsPressing(false);
+      setPressProgress(0);
+      clearInterval(progressInterval.current);
+    }, 2000);
+  };
+
+  const handlePressEnd = () => {
+    clearTimeout(pressTimer.current);
+    clearInterval(progressInterval.current);
+    setIsPressing(false);
+    setPressProgress(0);
+  };
+
   const [cookies, setCookies] = useState([]);
 
   const triggerCookies = (e) => {
@@ -160,24 +195,48 @@ const Hero = () => {
                 display: 'inline-block'
               }}
             >
-              Lorenzo
-              <a href="#about" className="hero-character-link">
+              {toLeet("Lorenzo")}
                 <motion.div
-                  className="hero-character-floating hero-character-trigger clickable"
+                  className={`hero-character-floating hero-character-trigger clickable ${isPressing ? 'pressing' : ''}`}
+                  onMouseDown={handlePressStart}
+                  onMouseUp={handlePressEnd}
+                  onMouseLeave={handlePressEnd}
+                  onTouchStart={handlePressStart}
+                  onTouchEnd={handlePressEnd}
                   style={{
                     x: charX,
                     y: charY,
                     opacity: charOpacity
                   }}
                 >
+                  <AnimatePresence>
+                    {isPressing && (
+                      <motion.svg 
+                        className="press-progress-ring" 
+                        viewBox="0 0 100 100"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      >
+                        <circle 
+                          cx="50" cy="50" r="45" 
+                          fill="none" 
+                          stroke="var(--accent-neon)" 
+                          strokeWidth="5"
+                          strokeDasharray="283"
+                          strokeDashoffset={283 - (283 * pressProgress) / 100}
+                          strokeLinecap="round"
+                        />
+                      </motion.svg>
+                    )}
+                  </AnimatePresence>
                   <motion.div
                     animate={{ y: [0, -20, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <img src={lorenzoImg} alt="Stylized Character" />
+                    <img src={isHackerMode ? lorenzoHackImg : lorenzoImg} alt="Stylized Character" />
                   </motion.div>
                 </motion.div>
-              </a>
             </motion.span>
             <br />
             <motion.span
@@ -188,7 +247,7 @@ const Hero = () => {
                 display: 'inline-block'
               }}
             >
-              Frasconi
+              {toLeet("Frasconi")}
             </motion.span>
           </motion.h1>
         </div>
@@ -215,13 +274,13 @@ const Hero = () => {
           >
             <div className="badge-pill available">
               <span className="dot"></span>
-              Cybersecurity & IT Security PMO
+              {toLeet("Cybersecurity & IT Security PMO")}
             </div>
             <div className="badge-pill">
-              ITALY
+              {toLeet("ITALY")}
             </div>
             <div className="badge-pill">
-              M.SC. CYBERSECURITY
+              {toLeet("M.SC. CYBERSECURITY")}
             </div>
           </motion.div>
         </div>

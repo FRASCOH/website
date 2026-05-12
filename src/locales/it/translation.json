@@ -86,6 +86,8 @@
     "open": "APRI",
     "go": "VAI",
     "translate": "TRADUCI",
-    "discover": "SCOPRI CHI SONO"
+    "discover": "SCOPRI CHI SONO",
+    "hacker": "ATTIVA MODALITÀ HACKER",
+    "deactivate_hacker": "DISATTIVA MODALITÀ HACKER"
   }
 }

@@ -86,6 +86,8 @@
     "open": "OPEN",
     "go": "GO",
     "translate": "TRANSLATE",
-    "discover": "DISCOVER ME"
+    "discover": "DISCOVER ME",
+    "hacker": "ACTIVATE HACKER MODE",
+    "deactivate_hacker": "DEACTIVATE HACKER MODE"
   }
 }

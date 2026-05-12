@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
+import { useHackerMode } from '../context/HackerContext';
 import './CustomCursor.css';
 
 import { useTranslation } from 'react-i18next';
 
 const CustomCursor = () => {
   const { t } = useTranslation();
+  const { isHackerMode } = useHackerMode();
   const [hoverType, setHoverType] = useState('');
   const [isHidden, setIsHidden] = useState(true);
   
@@ -32,7 +34,7 @@ const CustomCursor = () => {
         if (target.classList.contains('lang-toggle')) {
           setHoverType('translate');
         } else if (target.classList.contains('hero-character-trigger')) {
-          setHoverType('discover');
+          setHoverType(isHackerMode ? 'deactivate_hacker' : 'hacker');
         } else if (target.getAttribute('target') === '_blank' || target.getAttribute('href')?.startsWith('http')) {
           setHoverType('open');
         } else {
@@ -65,16 +67,18 @@ const CustomCursor = () => {
         top: cursorY,
       }}
     >
-      {hoverType && (
-        <motion.span 
-          initial={{ opacity: 0, scale: 0.5, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.5, y: 10 }}
-          className="cursor-text font-mono"
-        >
-          {t(`cursor.${hoverType}`)}
-        </motion.span>
-      )}
+      <AnimatePresence>
+        {hoverType && (
+          <motion.span 
+            initial={{ opacity: 0, scale: 0.5, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 10 }}
+            className="cursor-text font-mono"
+          >
+            {t(`cursor.${hoverType}`)}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
