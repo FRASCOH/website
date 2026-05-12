@@ -31,6 +31,13 @@ const Terminal = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [typedChars]);
 
+  // Listen for custom toggle event (for mobile/click triggers)
+  useEffect(() => {
+    const handleToggle = () => setIsOpen(prev => !prev);
+    window.addEventListener('toggleTerminal', handleToggle);
+    return () => window.removeEventListener('toggleTerminal', handleToggle);
+  }, []);
+
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
@@ -51,13 +58,16 @@ const Terminal = () => {
           newHistory.push({ type: 'output', content: 'Lorenzo Frasconi: Cybersecurity Expert & IT Project Manager. Specialized in risk analysis and secure infrastructures.' });
           break;
         case 'skills':
-          newHistory.push({ type: 'output', content: 'Mastering: Penetration Testing, Risk Management (ISO 27001, NIS2), Full-stack Dev (React, Node.js, PHP).' });
+          newHistory.push({ type: 'output', content: 'Mastering: Risk Management (ISO 27001, NIS2, GDPR, VA/PT), Full-stack Dev (React, Node.js, PHP).' });
           break;
         case 'whoami':
           newHistory.push({ type: 'output', content: 'guest_user@frasconi_security_terminal' });
           break;
         case 'contact':
           newHistory.push({ type: 'output', content: 'Email: lorenzo.frasconi99@gmail.com | LinkedIn: /in/lorenzo-frasconi' });
+          break;
+        case 'login':
+          newHistory.push({ type: 'output', content: 'login done' });
           break;
         case 'clear':
           setHistory([]);

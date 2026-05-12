@@ -64,7 +64,6 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
   border-bottom: 1px solid var(--glass-border);
   padding-bottom: 1rem;
 }
@@ -162,7 +161,7 @@
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {
   .about-section {
-    padding: 5rem 0 4rem 0;
+    padding: 2rem 0 4rem 0;
   }
 
   .about-editorial {
@@ -224,4 +223,48 @@
   .education-uni {
     font-size: 0.75rem;
   }
+}
+/* Certifications Section */
+.editorial-certifications {
+  margin-top: 4rem;
+}
+
+.cert-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: grayscale(1) brightness(1.5);
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.cert-item:hover .cert-logo {
+  filter: grayscale(0) brightness(1);
+  background: rgba(0, 255, 136, 0.05);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .editorial-certifications {
+    margin-top: 3rem;
+  }
+}
+
+.cert-row {
+  align-items: center;
+}
+
+.cert-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cert-main .item-date {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  opacity: 0.6;
 }

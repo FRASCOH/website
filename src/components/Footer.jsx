@@ -93,7 +93,10 @@ const Footer = () => {
               <a href="https://github.com/FRASCOH" target="_blank" rel="noreferrer">GitHub</a>
             </div>
           </div>
-          <div className="info-item session-info-item">
+          <div 
+            className="info-item session-info-item clickable" 
+            onClick={() => window.dispatchEvent(new CustomEvent('toggleTerminal'))}
+          >
             <span className="info-label font-mono">SESSION_METADATA</span>
             <div className="sniffer-wrapper font-mono">
               <div className="sniffer-line">IP: 192.168.1.{Math.floor(Math.random() * 254) + 1}</div>

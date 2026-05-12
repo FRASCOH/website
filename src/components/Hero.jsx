@@ -20,9 +20,9 @@ const Hero = () => {
       delay: Math.random() * 0.8,
       size: Math.random() * 30 + 15
     }));
-    
+
     setCookies(prev => [...prev, ...newCookies]);
-    
+
     // Cleanup only this specific batch after it finishes
     setTimeout(() => {
       setCookies(prev => prev.filter(c => !c.id.toString().startsWith(batchId.toString())));
@@ -76,15 +76,15 @@ const Hero = () => {
   const renderSubtitle = () => {
     const text = t('hero.subtitle');
     const parts = text.split(/(cookie)/i);
-    return parts.map((part, i) => 
+    return parts.map((part, i) =>
       part.toLowerCase() === 'cookie' ? (
-        <span 
-          key={i} 
-          className="cookie-trigger clickable" 
+        <span
+          key={i}
+          className="cookie-trigger clickable"
           onClick={triggerCookies}
-          style={{ 
-            color: 'inherit', 
-            cursor: 'pointer', 
+          style={{
+            color: 'inherit',
+            cursor: 'pointer',
             fontWeight: 'inherit',
             textDecoration: 'none'
           }}
@@ -102,14 +102,14 @@ const Hero = () => {
           <motion.div
             key={cookie.id}
             initial={{ y: -100, x: `${cookie.startX}vw`, rotate: 0, opacity: 1 }}
-            animate={{ 
-              y: '120vh', 
+            animate={{
+              y: '120vh',
               x: `${cookie.startX + cookie.endX}vw`,
               rotate: cookie.rotate,
-              opacity: [1, 1, 0.8, 0] 
+              opacity: [1, 1, 0.8, 0]
             }}
-            transition={{ 
-              duration: cookie.duration, 
+            transition={{
+              duration: cookie.duration,
               delay: cookie.delay,
               ease: [0.25, 0.1, 0.25, 1]
             }}
