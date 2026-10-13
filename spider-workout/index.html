@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider Workout - The Ultimate Calisthenics Tracker</title>
+    <style>
+        :root {
+            --bg-color: #0d0f14;
+            --card-bg: #161a22;
+            --border-color: #272d3b;
+            --text-primary: #f0f3f6;
+            --text-secondary: #8b949e;
+            --accent-red: #e63946;
+            --accent-glow: rgba(230, 57, 70, 0.25);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 50px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 680px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent-red);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--accent-red);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 44px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+            background: linear-gradient(180deg, #ffffff 0%, #a0aec0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .link-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+        .link-card:hover {
+            border-color: var(--accent-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+        .link-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .link-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        footer {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">iOS & watchOS App</div>
+        <h1>Spider Workout</h1>
+        <p>Il protocollo calisthenico definitivo: 20 minuti AMRAP (5 Trazioni, 10 Flessioni, 15 Squat) con sensore Hands-Free, Audio Coach e companion app per Apple Watch.</p>
+
+        <div class="links-grid">
+            <a href="privacy.html" class="link-card">
+                <div class="link-title">🛡️ Privacy Policy</div>
+                <div class="link-desc">Informativa su dati locali, Apple HealthKit e GDPR.</div>
+            </a>
+            <a href="support.html" class="link-card">
+                <div class="link-title">💬 Supporto & FAQ</div>
+                <div class="link-desc">Guida Apple Watch, ripristino acquisti e assistenza.</div>
+            </a>
+            <a href="terms.html" class="link-card">
+                <div class="link-title">📜 Termini di Servizio</div>
+                <div class="link-desc">Disclaimer medico, condizioni d'uso e licenza Pro.</div>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 Lorenzo Frasconi (FRASCOH) • Sviluppatore Indipendente</p>
+        </footer>
+    </div>
+</body>
+</html>
