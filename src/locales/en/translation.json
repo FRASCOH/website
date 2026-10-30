@@ -14,7 +14,7 @@
   "about": {
     "title": "About Me",
     "profile_title": "Professional Profile",
-    "text": "Master's Degree in <strong>Cyber Security</strong> from the University of Milan and Bachelor's Degree in Computer Science from the University of Parma. Currently serving as <strong>PMO & Technology Security</strong> at Zefiro NET, managing strategic projects and compliance (<strong>NIS2, ISO 27001, GDPR</strong>). I combine a deep passion for <strong>cybersecurity</strong> with experience in <strong>IT Project Management</strong> and university teaching.",
+    "text": "Master's Degree in <strong>Cyber Security</strong> from the University of Milan and Bachelor's Degree in Computer Science from the University of Parma. Currently serving as <strong>IT Security Engineer</strong> within the PMO & Technology Security function at Zefiro NET, managing strategic projects and compliance (<strong>NIS2, ISO 27001, GDPR</strong>). I combine a deep passion for <strong>cybersecurity</strong> with experience in <strong>IT Project Management</strong> and university teaching.",
     "education": {
       "title": "Education",
       "master_title": "M.Sc. in Cyber Security",
@@ -28,10 +28,10 @@
     },
     "experience": {
       "title": "Work Experience",
-      "zefiro_title": "PMO & Technology Security",
+      "zefiro_title": "IT Security Engineer",
       "zefiro_company": "Zefiro Net srl",
       "zefiro_date": "Nov 2025 - Present",
-      "zefiro_desc": "Management and supervision of IT & CyberSecurity projects, Risk Analysis, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
+      "zefiro_desc": "PMO & Technology Security function. Management and supervision of IT and CyberSecurity projects, Risk Analysis, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
       "prof_title": "University Professor",
       "prof_company": "University of Parma",
       "prof_date": "Oct 2024 - Present",
@@ -39,7 +39,7 @@
       "amabile_title": "IT Project Manager",
       "amabile_company": "Amabile srl",
       "amabile_date": "Jun 2024 - Nov 2025",
-      "amabile_desc": "Digital infrastructure re-platforming, MFA implementation, IT vendor management for software integration, Agile project management.",
+      "amabile_desc": "Digital infrastructure re-platforming, IT vendor management for software integration, IT team management, Social Media and online Sales.",
       "idea_title": "PM – Full Stack Developer",
       "idea_company": "4IDEA srl",
       "idea_date": "Dec 2021 - Jun 2024",
@@ -54,23 +54,50 @@
   },
   "projects": {
     "title": "R&D Projects",
-    "view_all": "GitHub",
+    "view_all": "View all on GitHub",
+    "featured_badge": "Live Multi-Platform Ecosystem",
+    "links": {
+      "portal": "Web Portal",
+      "telegram": "Telegram Channel",
+      "appstore": "App Store",
+      "github": "GitHub"
+    },
     "items": {
+      "acn": {
+        "title": "Monitor ACN NIS2",
+        "category": "Regulatory Tech & Automation",
+        "subtitle": "Web Portal • Telegram Channel • iOS App • GitHub Actions",
+        "desc": "Integrated ecosystem for continuous monitoring of updates from the Italian National Cybersecurity Agency (ACN) regarding the NIS2 Directive and General Acts. Features an interactive web portal, real-time Telegram alerts, and a native iOS app available on the App Store."
+      },
+      "cybernews": {
+        "title": "CyberNews",
+        "category": "Threat Intel & Mobile",
+        "desc": "Platform and native iOS application in Swift to aggregate and monitor real-time cyber threats, zero-day vulnerabilities, ransomware campaigns, and regulatory frameworks (NIS2, Golden Power, DORA, ISO 27001) with iOS widgets and push alerts."
+      },
+      "gdpr_guard": {
+        "title": "GDPR Guard",
+        "category": "Privacy & NLP",
+        "desc": "Local-first, GDPR-compliant automated PII anonymizer for detecting, masking, and redacting sensitive data in structured files and logs. Dual-engine (Regex + NLP via Microsoft Presidio & spaCy) with Streamlit Web UI and CLI."
+      },
+      "password_cracking": {
+        "title": "Password Cracking Rig",
+        "category": "Offensive Security & Lab",
+        "desc": "Cybersecurity benchmarking lab analyzing password entropy vs. length with Hashcat, featuring a Python Shannon entropy calculator and an interactive dark-mode awareness presentation dashboard."
+      },
       "smc": {
         "title": "SMC in Genomics",
-        "desc": "Secure calculation of Edit Distance in genomics via Secure Multiparty Computation (SMC). Focus on privacy and performance."
+        "category": "Applied Cryptography",
+        "desc": "Secure computation of Edit Distance on genomic data using Secure Multiparty Computation (SMC). Focus on biological data privacy and computational performance optimization in C++."
       },
       "cti": {
-        "title": "Cyber Threat Intelligence System",
-        "desc": "System based on Honeypots and IBM QRadar SIEM for MISP feed integration and proactive defense."
+        "title": "Cyber Threat Intelligence",
+        "category": "Defense & SIEM",
+        "desc": "Proactive defense architecture using distributed Honeypots and IBM QRadar SIEM, integrated with MISP threat intelligence feeds for automated correlation and rapid response to IoCs."
       },
       "viewer": {
         "title": "VieweR (Mobile VR)",
-        "desc": "Android VR application using Unity3D and Google Cardboard for immersive virtual tours."
-      },
-      "acn": {
-        "title": "Monitor ACN NIS2",
-        "desc": "Automated Python system for continuous monitoring of updates from the Italian National Cybersecurity Agency (ACN) regarding NIS2 and General Acts, with instant email notifications."
+        "category": "Immersive Tech",
+        "desc": "Mobile Virtual Reality application for Android developed with Unity3D, C#, and Google Cardboard SDK for interactive 360° virtual tours and immersive exploration."
       }
     }
   },

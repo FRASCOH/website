@@ -14,7 +14,7 @@
   "about": {
     "title": "Chi Sono",
     "profile_title": "Profilo Professionale",
-    "text": "Laureato Magistrale in <strong>Sicurezza Informatica</strong> presso l'Università degli Studi di Milano e Laureato Triennale in Informatica presso l'Università degli Studi di Parma. Attualmente ricopro il ruolo di <strong>PMO & Technology Security</strong> presso Zefiro NET, occupandomi di progetti strategici e compliance (<strong>NIS2, ISO 27001, GDPR</strong>). Unisco una profonda passione per la <strong>cybersecurity</strong> con l'esperienza nell'<strong>IT Project Management</strong> e nella docenza universitaria.",
+    "text": "Laureato Magistrale in <strong>Sicurezza Informatica</strong> presso l'Università degli Studi di Milano e Laureato Triennale in Informatica presso l'Università degli Studi di Parma. Attualmente ricopro il ruolo di <strong>IT Security Engineer</strong> nella funzione PMO & Technology Security presso Zefiro NET, occupandomi di progetti strategici e compliance (<strong>NIS2, ISO 27001, GDPR</strong>). Unisco una profonda passione per la <strong>cybersecurity</strong> con l'esperienza nell'<strong>IT Project Management</strong> e nella docenza universitaria.",
     "education": {
       "title": "Istruzione",
       "master_title": "Laurea Magistrale in Sicurezza Informatica",
@@ -28,10 +28,10 @@
     },
     "experience": {
       "title": "Esperienza Lavorativa",
-      "zefiro_title": "PMO & Technology Security",
+      "zefiro_title": "IT Security Engineer",
       "zefiro_company": "Zefiro Net srl",
       "zefiro_date": "Nov 2025 - Presente",
-      "zefiro_desc": "Gestione e supervisione dei progetti IT& CyberSecurity, Analisi del rischio, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
+      "zefiro_desc": "Funzione PMO & Technology Security. Gestione e supervisione dei progetti IT & CyberSecurity, Analisi del rischio, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
       "prof_title": "Professore Universitario",
       "prof_company": "Università degli Studi di Parma",
       "prof_date": "Ott 2024 - Presente",
@@ -39,7 +39,7 @@
       "amabile_title": "Project Manager IT",
       "amabile_company": "Amabile srl",
       "amabile_date": "Giu 2024 - Nov 2025",
-      "amabile_desc": "Re-platforming infrastruttura digitale, implementazione MFA, gestione fornitori IT per software integration, gestione progetti Agile.",
+      "amabile_desc": "Re-platforming infrastruttura digitale, gestione fornitori IT per software integration, gestione team IT, Social Media e Vendite online.",
       "idea_title": "PM – Full Stack Developer",
       "idea_company": "4IDEA srl",
       "idea_date": "Dic 2021 - Giu 2024",
@@ -54,23 +54,50 @@
   },
   "projects": {
     "title": "Progetti di Ricerca e Sviluppo",
-    "view_all": "GitHub",
+    "view_all": "Vedi tutto su GitHub",
+    "featured_badge": "Ecosistema Live Multi-Piattaforma",
+    "links": {
+      "portal": "Portale Web",
+      "telegram": "Canale Telegram",
+      "appstore": "App Store",
+      "github": "GitHub"
+    },
     "items": {
-      "smc": {
-        "title": "SMC in Genomics",
-        "desc": "Calcolo sicuro della Edit Distance in ambito genomico tramite Secure Multiparty Computation (SMC). Focus su privacy e performance."
-      },
-      "cti": {
-        "title": "Cyber Threat Intelligence System",
-        "desc": "Sistema basato su Honeypot e IBM QRadar SIEM per l'integrazione di feed MISP e difesa proattiva."
-      },
-      "viewer": {
-        "title": "VieweR (VR Mobile)",
-        "desc": "Applicazione VR per Android con Unity3D e Google Cardboard per tour virtuali immersivi."
-      },
       "acn": {
         "title": "Monitor ACN NIS2",
-        "desc": "Sistema automatizzato in Python per il monitoraggio continuo degli aggiornamenti dell'Agenzia per la Cybersicurezza Nazionale (ACN) su NIS2 e Atti Generali, con notifiche email istantanee."
+        "category": "Regulatory Tech & Automation",
+        "subtitle": "Portale Web • Canale Telegram • iOS App • GitHub Actions",
+        "desc": "Sistema integrato per il monitoraggio continuo degli aggiornamenti dell'Agenzia per la Cybersicurezza Nazionale (ACN) su Direttiva NIS2 e Atti Generali. Include portale web interattivo, canale Telegram con notifiche push istantanee e applicazione mobile nativa per iOS disponibile su App Store."
+      },
+      "cybernews": {
+        "title": "CyberNews",
+        "category": "Threat Intel & Mobile",
+        "desc": "Piattaforma e app iOS nativa in Swift per aggregare e monitorare in tempo reale minacce cibernetiche, vulnerabilità zero-day, campagne ransomware e conformità normativa (NIS2, Golden Power, DORA, ISO 27001) con widget e notifiche push."
+      },
+      "gdpr_guard": {
+        "title": "GDPR Guard",
+        "category": "Privacy & NLP",
+        "desc": "Automated PII Anonymizer local-first e conforme al GDPR per identificare, mascherare e anonimizzare dati sensibili in file strutturati e log. Motore dual-engine (Regex + NLP con Microsoft Presidio e spaCy) con Web UI Streamlit e CLI."
+      },
+      "password_cracking": {
+        "title": "Password Cracking Rig",
+        "category": "Offensive Security & Lab",
+        "desc": "Laboratorio di benchmarking su entropia vs. lunghezza delle password tramite Hashcat, con calcolatore dell'entropia di Shannon in Python e web application interattiva in dark-mode per presentazioni di security awareness."
+      },
+      "smc": {
+        "title": "SMC in Genomics",
+        "category": "Applied Cryptography",
+        "desc": "Calcolo sicuro della Edit Distance in ambito genomico tramite Secure Multiparty Computation (SMC). Focus sulla protezione crittografica dei dati biologici e ottimizzazione delle performance computazionali in C++."
+      },
+      "cti": {
+        "title": "Cyber Threat Intelligence",
+        "category": "Defense & SIEM",
+        "desc": "Architettura di difesa proattiva basata su Honeypot distribuite e correlazione su IBM QRadar SIEM, integrata con feed MISP per l'analisi e il contrasto tempestivo di indicatori di compromissione (IoC)."
+      },
+      "viewer": {
+        "title": "VieweR (Mobile VR)",
+        "category": "Immersive Tech",
+        "desc": "Applicazione di Realtà Virtuale mobile per Android sviluppata con Unity3D, C# e Google Cardboard SDK per la navigazione interattiva e tour virtuali immersivi a 360°."
       }
     }
   },
