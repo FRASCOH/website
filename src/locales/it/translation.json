@@ -48,18 +48,21 @@
       "items": {
         "fit_seminar": {
           "year": "2021",
-          "title": "3° FIT Seminar - Privacy of IoT (Erasmus+)",
+          "title": "3° FIT Seminar - Privacy of IoT",
+          "subtitle": "Erasmus+ Cybersecurity Seminar",
           "rank": "1° Posto 🏆"
         },
         "hack_in_towers": {
           "year": "2025",
           "title": "Hack-in-Towers",
+          "subtitle": "Capture The Flag Competition",
           "rank": "4° Posto"
         },
         "cyberchallenge": {
           "year": "2021",
           "title": "CyberChallenge.IT",
-          "rank": "11° Posto Nazionale"
+          "subtitle": "Gara Nazionale Hacker Etico",
+          "rank": "11° Posto Naz."
         }
       }
     },

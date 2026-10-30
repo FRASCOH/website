@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { ArrowUpRight } from 'lucide-react';
 import './About.css';
 
 const AboutItem = ({ children }) => {
@@ -150,56 +151,70 @@ const About = () => {
               </div>
             </div>
 
-            {/* 3. GRID A DUE COLONNE: CERTIFICAZIONI & COMPETIZIONI */}
+            {/* 3. SUB-GRID A DUE COLONNE PERFETTAMENTE ALLINEATA: CERTIFICAZIONI & COMPETIZIONI */}
             <div className="editorial-grid-two-col">
               {/* CERTIFICAZIONI */}
-              <div className="editorial-certifications">
+              <div className="editorial-cert-column">
                 <AboutItem>
                   <h3 className="editorial-title font-mono">{t('about.certifications.title')}</h3>
                 </AboutItem>
-                <div className="education-list-rows">
+                <div className="dual-col-list">
                   {certifications.map((cert) => (
                     <AboutItem key={cert}>
-                      <div className="education-row compact">
-                        <h4 className="education-degree text-sm">{t(`about.certifications.items.${cert}.title`)}</h4>
-                        <div className="education-spacer"></div>
-                        <a 
-                          href={certificationLinks[cert]} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          className="education-uni font-mono clickable"
-                        >
-                          {t(`about.certifications.items.${cert}.issuer`)}
-                        </a>
-                      </div>
+                      <a 
+                        href={certificationLinks[cert]} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="dual-col-row clickable"
+                      >
+                        <div className="dual-col-main">
+                          <h4 className="dual-col-title">
+                            {t(`about.certifications.items.${cert}.title`)}
+                          </h4>
+                          <span className="dual-col-sub font-mono">
+                            {t(`about.certifications.items.${cert}.issuer`)}
+                          </span>
+                        </div>
+                        <div className="dual-col-badge font-mono">
+                          <span>{t(`about.certifications.items.${cert}.issuer`)}</span>
+                          <ArrowUpRight size={14} className="dual-col-arrow" />
+                        </div>
+                      </a>
                     </AboutItem>
                   ))}
                 </div>
               </div>
 
               {/* COMPETIZIONI CYBER */}
-              <div className="editorial-competitions">
+              <div className="editorial-comp-column">
                 <AboutItem>
                   <h3 className="editorial-title font-mono">{t('about.competitions.title')}</h3>
                 </AboutItem>
-                <div className="education-list-rows">
+                <div className="dual-col-list">
                   {competitions.map((comp) => (
                     <AboutItem key={comp}>
-                      <div className="education-row compact">
-                        <h4 className="education-degree text-sm">
-                          <span className="comp-year font-mono">{t(`about.competitions.items.${comp}.year`)}</span>{' '}
-                          {t(`about.competitions.items.${comp}.title`)}
-                        </h4>
-                        <div className="education-spacer"></div>
-                        <a 
-                          href={competitionLinks[comp]} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          className={`education-uni font-mono clickable ${comp === 'fit_seminar' ? 'highlight-gold' : ''}`}
-                        >
-                          {t(`about.competitions.items.${comp}.rank`)}
-                        </a>
-                      </div>
+                      <a 
+                        href={competitionLinks[comp]} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="dual-col-row clickable"
+                      >
+                        <div className="dual-col-main">
+                          <div className="dual-col-title-wrap">
+                            <span className="dual-col-year font-mono">{t(`about.competitions.items.${comp}.year`)}</span>
+                            <h4 className="dual-col-title">
+                              {t(`about.competitions.items.${comp}.title`)}
+                            </h4>
+                          </div>
+                          <span className="dual-col-sub font-mono">
+                            {t(`about.competitions.items.${comp}.subtitle`)}
+                          </span>
+                        </div>
+                        <div className={`dual-col-badge font-mono ${comp === 'fit_seminar' ? 'gold-badge' : ''}`}>
+                          <span>{t(`about.competitions.items.${comp}.rank`)}</span>
+                          <ArrowUpRight size={14} className="dual-col-arrow" />
+                        </div>
+                      </a>
                     </AboutItem>
                   ))}
                 </div>
@@ -211,24 +226,28 @@ const About = () => {
               <AboutItem>
                 <h3 className="editorial-title font-mono">{t('about.teaching.title')}</h3>
               </AboutItem>
-              <div className="education-list-rows">
+              <div className="dual-col-list">
                 {teaching.map((teach) => (
                   <AboutItem key={teach}>
-                    <div className="education-row compact">
-                      <div className="teaching-meta">
-                        <h4 className="education-degree text-sm">{t(`about.teaching.items.${teach}.role`)}</h4>
-                        <span className="teaching-date font-mono">{t(`about.teaching.items.${teach}.date`)}</span>
+                    <a 
+                      href={teachingLinks[teach]} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="dual-col-row clickable"
+                    >
+                      <div className="dual-col-main">
+                        <h4 className="dual-col-title">
+                          {t(`about.teaching.items.${teach}.role`)}
+                        </h4>
+                        <span className="dual-col-sub font-mono">
+                          {t(`about.teaching.items.${teach}.date`)}
+                        </span>
                       </div>
-                      <div className="education-spacer"></div>
-                      <a 
-                        href={teachingLinks[teach]} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="education-uni font-mono clickable"
-                      >
-                        {t(`about.teaching.items.${teach}.institution`)}
-                      </a>
-                    </div>
+                      <div className="dual-col-badge font-mono">
+                        <span>{t(`about.teaching.items.${teach}.institution`)}</span>
+                        <ArrowUpRight size={14} className="dual-col-arrow" />
+                      </div>
+                    </a>
                   </AboutItem>
                 ))}
               </div>
