@@ -351,3 +351,11 @@
   text-shadow: 0 0 10px rgba(255, 207, 37, 0.3);
   font-weight: 700;
 }
+
+.progress-badge {
+  background: rgba(0, 229, 255, 0.08) !important;
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  color: var(--accent-cyan) !important;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+  font-weight: 700;
+}

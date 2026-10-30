@@ -29,6 +29,11 @@
     "certifications": {
       "title": "Certifications & Training",
       "items": {
+        "cism": {
+          "title": "CISM – Certified Information Security Manager",
+          "issuer": "ISACA",
+          "status": "In progress"
+        },
         "cs50_cyber": {
           "title": "CS50’s Introduction to Cybersecurity",
           "issuer": "Harvard University"

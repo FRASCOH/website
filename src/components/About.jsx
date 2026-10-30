@@ -34,7 +34,7 @@ const About = () => {
 
   const experiences = ['zefiro', 'prof', 'amabile', 'idea'];
   const education = ['master', 'bachelor', 'diploma'];
-  const certifications = ['cs50_cyber', 'cs50_tech', 'aws_security'];
+  const certifications = ['cism', 'cs50_cyber', 'cs50_tech', 'aws_security'];
   const competitions = ['fit_seminar', 'hack_in_towers', 'cyberchallenge'];
   const teaching = ['volta', 'calam', 'marconi'];
 
@@ -52,6 +52,7 @@ const About = () => {
   };
 
   const certificationLinks = {
+    cism: "https://www.isaca.org/credentialing/cism",
     cs50_cyber: "https://cs50.harvard.edu/cybersecurity/",
     cs50_tech: "https://cs50.harvard.edu/technology/",
     aws_security: "https://www.coursera.org/"
@@ -175,8 +176,12 @@ const About = () => {
                             {t(`about.certifications.items.${cert}.issuer`)}
                           </span>
                         </div>
-                        <div className="dual-col-badge font-mono">
-                          <span>{t(`about.certifications.items.${cert}.issuer`)}</span>
+                        <div className={`dual-col-badge font-mono ${cert === 'cism' ? 'progress-badge' : ''}`}>
+                          <span>
+                            {cert === 'cism'
+                              ? t(`about.certifications.items.${cert}.status`)
+                              : t(`about.certifications.items.${cert}.issuer`)}
+                          </span>
                           <ArrowUpRight size={14} className="dual-col-arrow" />
                         </div>
                       </a>
