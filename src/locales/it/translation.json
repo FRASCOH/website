@@ -14,7 +14,7 @@
   "about": {
     "title": "Chi Sono",
     "profile_title": "Profilo Professionale",
-    "text": "Laureato Magistrale in <strong>Sicurezza Informatica</strong> presso l'Università degli Studi di Milano e Laureato Triennale in Informatica presso l'Università degli Studi di Parma. Attualmente ricopro il ruolo di <strong>IT Security Engineer</strong> nella funzione PMO & Technology Security presso Zefiro NET, occupandomi di progetti strategici e compliance (<strong>NIS2, ISO 27001, GDPR</strong>). Unisco una profonda passione per la <strong>cybersecurity</strong> con l'esperienza nell'<strong>IT Project Management</strong> e nella docenza universitaria.",
+    "text": "Laureato Magistrale in <strong>Sicurezza Informatica</strong> presso l'Università degli Studi di Milano e Laureato Triennale in Informatica presso l'Università degli Studi di Parma. Attualmente ricopro il ruolo di <strong>AI & IT Security Engineer</strong> nella funzione PMO & Technology Security presso Zefiro NET, occupandomi di progetti strategici e compliance (<strong>NIS2, ISO 27001, GDPR</strong>). Unisco una profonda passione per la <strong>cybersecurity</strong> e l'<strong>intelligenza artificiale</strong> con l'esperienza nell'<strong>IT Project Management</strong> e nella docenza universitaria.",
     "education": {
       "title": "Istruzione",
       "master_title": "Laurea Magistrale in Sicurezza Informatica",
@@ -26,9 +26,46 @@
       "diploma_title": "Diploma Perito Informatico",
       "diploma_uni": "ISII Marconi"
     },
+    "certifications": {
+      "title": "Certificazioni & Corsi",
+      "items": {
+        "cs50_cyber": {
+          "title": "CS50’s Introduction to Cybersecurity",
+          "issuer": "Harvard University"
+        },
+        "cs50_tech": {
+          "title": "CS50’s Understanding Technology",
+          "issuer": "Harvard University"
+        },
+        "aws_security": {
+          "title": "IT - AWS - Security",
+          "issuer": "Coursera"
+        }
+      }
+    },
+    "competitions": {
+      "title": "Competizioni Cyber",
+      "items": {
+        "fit_seminar": {
+          "year": "2021",
+          "title": "3° FIT Seminar - Privacy of IoT (Erasmus+)",
+          "rank": "1° Posto 🏆"
+        },
+        "hack_in_towers": {
+          "year": "2025",
+          "title": "Hack-in-Towers",
+          "rank": "4° Posto"
+        },
+        "cyberchallenge": {
+          "year": "2021",
+          "title": "CyberChallenge.IT",
+          "rank": "11° Posto Nazionale"
+        }
+      }
+    },
     "experience": {
       "title": "Esperienza Lavorativa",
-      "zefiro_title": "IT Security Engineer",
+      "zefiro_title": "AI & IT Security Engineer",
       "zefiro_company": "Zefiro Net srl",
       "zefiro_date": "Nov 2025 - Presente",
       "zefiro_desc": "Funzione PMO & Technology Security. Gestione e supervisione dei progetti IT & CyberSecurity, Analisi del rischio, Vulnerability Assessment, GDPR, ISO 27001, Golden Power.",
@@ -39,11 +76,31 @@
       "amabile_title": "IT Manager",
       "amabile_company": "Amabile srl",
       "amabile_date": "Giu 2024 - Nov 2025",
-      "amabile_desc": "Re-platforming infrastruttura digitale, gestione fornitori IT per software integration, gestione team IT, Social Media e Vendite online.",
+      "amabile_desc": "Progettazione di architetture IT sicure e scalabili, implementazione di misure di sicurezza informatica (MFA, DNSSec, EDR, Backup & Recovery), integrazione sicura di soluzioni ERP, CMS e cloud AWS, conduzione di progetti con governance e gestione del rischio Agile.",
       "idea_title": "PM – Full Stack Developer",
       "idea_company": "4IDEA srl",
       "idea_date": "Dic 2021 - Giu 2024",
       "idea_desc": "Sviluppo web con CMS Wordpress, Shopify, Magento, Prestashop, coordinamento team creativo e ottimizzazione SEO/Ads."
+    },
+    "teaching": {
+      "title": "Altre Esperienze di Docenza",
+      "items": {
+        "volta": {
+          "date": "Set 2023 - Giu 2024",
+          "role": "Docente e Gestore Sito Web",
+          "institution": "MIM A. Volta"
+        },
+        "calam": {
+          "date": "Mag 2023 - Presente",
+          "role": "Docente a Contratto",
+          "institution": "IFTS CALAM CFP"
+        },
+        "marconi": {
+          "date": "Mag 2022 - Giu 2022",
+          "role": "Docente a Contratto",
+          "institution": "MIM ISII G. Marconi"
+        }
+      }
     },
     "skills_title": "Skill & Competenze",
     "stats": {

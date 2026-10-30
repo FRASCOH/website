@@ -57,7 +57,7 @@ const Terminal = () => {
           newHistory.push({ type: 'output', content: 'Available commands: about, skills, contact, clear, exit, whoami, exploit, restore' });
           break;
         case 'about':
-          newHistory.push({ type: 'output', content: 'Lorenzo Frasconi: IT Security Engineer & Cybersecurity Expert. Specialized in risk analysis and secure infrastructures.' });
+          newHistory.push({ type: 'output', content: 'Lorenzo Frasconi: AI & IT Security Engineer & Cybersecurity Expert. Specialized in risk analysis and secure infrastructures.' });
           break;
         case 'skills':
           newHistory.push({ type: 'output', content: 'Mastering: Risk Management (ISO 27001, NIS2, GDPR, VA/PT), Full-stack Dev (React, Node.js, PHP).' });

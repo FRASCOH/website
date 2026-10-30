@@ -33,6 +33,9 @@ const About = () => {
 
   const experiences = ['zefiro', 'prof', 'amabile', 'idea'];
   const education = ['master', 'bachelor', 'diploma'];
+  const certifications = ['cs50_cyber', 'cs50_tech', 'aws_security'];
+  const competitions = ['fit_seminar', 'hack_in_towers', 'cyberchallenge'];
+  const teaching = ['volta', 'calam', 'marconi'];
 
   const experienceLinks = {
     zefiro: "https://it.wikipedia.org/wiki/Zefiro_Net",
@@ -45,6 +48,24 @@ const About = () => {
     master: "https://www.unimi.it/it",
     bachelor: "https://www.unipr.it/",
     diploma: "https://www.isii.it/"
+  };
+
+  const certificationLinks = {
+    cs50_cyber: "https://cs50.harvard.edu/cybersecurity/",
+    cs50_tech: "https://cs50.harvard.edu/technology/",
+    aws_security: "https://www.coursera.org/"
+  };
+
+  const competitionLinks = {
+    fit_seminar: "https://erasmus-plus.ec.europa.eu/",
+    hack_in_towers: "https://github.com/FRASCOH",
+    cyberchallenge: "https://cyberchallenge.it/"
+  };
+
+  const teachingLinks = {
+    volta: "https://www.isii.it/",
+    calam: "https://www.calam.it/",
+    marconi: "https://www.isii.it/"
   };
 
   return (
@@ -74,6 +95,7 @@ const About = () => {
           </div>
 
           <div className="editorial-sections">
+            {/* 1. ESPERIENZA LAVORATIVA */}
             <div className="editorial-experience">
               <AboutItem>
                 <h3 className="editorial-title font-mono">{t('about.experience.title')}</h3>
@@ -103,6 +125,7 @@ const About = () => {
               </div>
             </div>
 
+            {/* 2. ISTRUZIONE ACCADEMICA */}
             <div className="editorial-education">
               <AboutItem>
                 <h3 className="editorial-title font-mono">{t('about.education.title')}</h3>
@@ -120,6 +143,90 @@ const About = () => {
                         className="education-uni font-mono clickable"
                       >
                         {t(`about.education.${edu}_uni`)}
+                      </a>
+                    </div>
+                  </AboutItem>
+                ))}
+              </div>
+            </div>
+
+            {/* 3. GRID A DUE COLONNE: CERTIFICAZIONI & COMPETIZIONI */}
+            <div className="editorial-grid-two-col">
+              {/* CERTIFICAZIONI */}
+              <div className="editorial-certifications">
+                <AboutItem>
+                  <h3 className="editorial-title font-mono">{t('about.certifications.title')}</h3>
+                </AboutItem>
+                <div className="education-list-rows">
+                  {certifications.map((cert) => (
+                    <AboutItem key={cert}>
+                      <div className="education-row compact">
+                        <h4 className="education-degree text-sm">{t(`about.certifications.items.${cert}.title`)}</h4>
+                        <div className="education-spacer"></div>
+                        <a 
+                          href={certificationLinks[cert]} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="education-uni font-mono clickable"
+                        >
+                          {t(`about.certifications.items.${cert}.issuer`)}
+                        </a>
+                      </div>
+                    </AboutItem>
+                  ))}
+                </div>
+              </div>
+
+              {/* COMPETIZIONI CYBER */}
+              <div className="editorial-competitions">
+                <AboutItem>
+                  <h3 className="editorial-title font-mono">{t('about.competitions.title')}</h3>
+                </AboutItem>
+                <div className="education-list-rows">
+                  {competitions.map((comp) => (
+                    <AboutItem key={comp}>
+                      <div className="education-row compact">
+                        <h4 className="education-degree text-sm">
+                          <span className="comp-year font-mono">{t(`about.competitions.items.${comp}.year`)}</span>{' '}
+                          {t(`about.competitions.items.${comp}.title`)}
+                        </h4>
+                        <div className="education-spacer"></div>
+                        <a 
+                          href={competitionLinks[comp]} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className={`education-uni font-mono clickable ${comp === 'fit_seminar' ? 'highlight-gold' : ''}`}
+                        >
+                          {t(`about.competitions.items.${comp}.rank`)}
+                        </a>
+                      </div>
+                    </AboutItem>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* 4. ALTRE ESPERIENZE DI DOCENZA */}
+            <div className="editorial-teaching">
+              <AboutItem>
+                <h3 className="editorial-title font-mono">{t('about.teaching.title')}</h3>
+              </AboutItem>
+              <div className="education-list-rows">
+                {teaching.map((teach) => (
+                  <AboutItem key={teach}>
+                    <div className="education-row compact">
+                      <div className="teaching-meta">
+                        <h4 className="education-degree text-sm">{t(`about.teaching.items.${teach}.role`)}</h4>
+                        <span className="teaching-date font-mono">{t(`about.teaching.items.${teach}.date`)}</span>
+                      </div>
+                      <div className="education-spacer"></div>
+                      <a 
+                        href={teachingLinks[teach]} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="education-uni font-mono clickable"
+                      >
+                        {t(`about.teaching.items.${teach}.institution`)}
                       </a>
                     </div>
                   </AboutItem>

@@ -96,7 +96,7 @@ const Hero = () => {
         className="hero-top-left font-mono"
         style={{ opacity: metaOpacity, filter: metaBlur }}
       >
-        IT SECURITY ENGINEER
+        AI & IT SECURITY ENGINEER
       </motion.div>
 
       <motion.a
@@ -204,7 +204,7 @@ const Hero = () => {
           >
             <div className="badge-pill available">
               <span className="dot"></span>
-              {toLeet("IT Security Engineer")}
+              {toLeet("AI & IT Security Engineer")}
             </div>
             <div className="badge-pill">
               {toLeet("ITALY")}
