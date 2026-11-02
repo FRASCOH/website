@@ -2,6 +2,7 @@
   padding: 8rem 0;
   position: relative;
   z-index: 10;
+  overflow-x: hidden;
 }
 
 .about-editorial {
@@ -68,6 +69,7 @@
   padding-bottom: 1rem;
 }
 
+/* 1. ESPERIENZA LAVORATIVA */
 .clean-list {
   display: flex;
   flex-direction: column;
@@ -78,51 +80,6 @@
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 2rem;
-}
-
-.education-list-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.education-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-}
-
-.education-row:hover {
-  border-bottom-color: var(--accent-neon);
-  padding-left: 1rem;
-}
-
-.education-degree {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--text-primary);
-}
-
-.education-spacer {
-  flex: 1;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.03);
-  margin: 0 2rem;
-}
-
-.education-uni {
-  font-size: 0.85rem;
-  color: var(--accent-neon);
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-.education-uni:hover {
-  opacity: 0.7;
 }
 
 .item-meta {
@@ -158,93 +115,73 @@
   line-height: 1.6;
 }
 
-/* ---- MOBILE ---- */
-@media (max-width: 768px) {
-  .about-section {
-    padding: 2rem 0 4rem 0;
-  }
-
-  .about-editorial {
-    gap: 4rem;
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 8vw, 3rem) !important;
-  }
-
-  .oversized-text {
-    font-size: 1.15rem;
-    line-height: 1.7;
-  }
-
-  .editorial-sections {
-    gap: 4rem;
-  }
-
-  .editorial-experience .clean-list-item {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .item-meta {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .item-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .item-desc {
-    font-size: 0.9rem;
-  }
-
-  .clean-list {
-    gap: 2.5rem;
-  }
-
-  .education-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-    padding: 1rem 0;
-  }
-
-  .education-spacer {
-    display: none;
-  }
-
-  .education-degree {
-    font-size: 1.05rem;
-  }
-
-  .education-uni {
-    font-size: 0.75rem;
-  }
-
-  .editorial-grid-two-col {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-
-  .dual-col-row {
-    min-height: auto;
-    padding: 1rem 0;
-  }
+/* 2. ISTRUZIONE ACCADEMICA */
+.education-list-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Two-column layout for Certifications & Competitions */
+.education-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.education-row:hover {
+  border-bottom-color: var(--accent-neon);
+  padding-left: 0.5rem;
+}
+
+.education-degree {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.education-spacer {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.03);
+  margin: 0 2rem;
+}
+
+.education-uni {
+  font-size: 0.85rem;
+  color: var(--accent-neon);
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.education-uni:hover {
+  opacity: 0.7;
+}
+
+/* 3. DUAL COLUMN LAYOUT (CERTIFICAZIONI & COMPETIZIONI) */
 .editorial-grid-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
+  width: 100%;
+}
+
+.editorial-cert-column,
+.editorial-comp-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
 }
 
 .dual-col-list {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .dual-col-row {
@@ -255,6 +192,8 @@
   padding: 1.15rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
   transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
@@ -269,6 +208,7 @@
 .dual-col-row:hover .dual-col-arrow {
   transform: translate(2px, -2px);
   color: var(--accent-neon);
+  opacity: 1;
 }
 
 .dual-col-main {
@@ -277,12 +217,14 @@
   gap: 0.25rem;
   padding-right: 1.25rem;
   flex: 1;
+  min-width: 0;
 }
 
 .dual-col-title-wrap {
   display: flex;
   align-items: center;
   gap: 0.55rem;
+  min-width: 0;
 }
 
 .dual-col-year {
@@ -294,6 +236,7 @@
   border-radius: 4px;
   line-height: 1;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .dual-col-title {
@@ -304,12 +247,16 @@
   line-height: 1.3;
   margin: 0;
   transition: color 0.2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dual-col-sub {
   font-size: 0.78rem;
   color: var(--text-secondary);
   letter-spacing: 0.3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dual-col-badge {
@@ -325,6 +272,7 @@
   color: var(--text-secondary);
   white-space: nowrap;
   letter-spacing: 0.4px;
+  flex-shrink: 0;
   transition: all 0.25s ease;
 }
 
@@ -338,10 +286,6 @@
   background: rgba(0, 255, 136, 0.08);
   border-color: var(--accent-neon);
   color: var(--accent-neon);
-}
-
-.dual-col-row:hover .dual-col-arrow {
-  opacity: 1;
 }
 
 .gold-badge {
@@ -358,4 +302,162 @@
   color: var(--accent-cyan) !important;
   text-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
   font-weight: 700;
+}
+
+/* 4. DOCENZA */
+.editorial-teaching {
+  width: 100%;
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS (MOBILE & TABLET)
+   =================================================== */
+
+@media (max-width: 992px) {
+  .editorial-grid-two-col {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 0 5rem 0;
+  }
+
+  .about-editorial {
+    gap: 3.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+
+  .oversized-text {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    word-break: break-word;
+  }
+
+  .editorial-sections {
+    gap: 3.5rem;
+    width: 100%;
+  }
+
+  /* Experience on Mobile */
+  .editorial-experience .clean-list-item {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .item-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .item-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    word-break: break-word;
+  }
+
+  .item-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    word-break: break-word;
+  }
+
+  .clean-list {
+    gap: 2rem;
+  }
+
+  /* Education on Mobile */
+  .education-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .education-spacer {
+    display: none;
+  }
+
+  .education-degree {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  .education-uni {
+    font-size: 0.8rem;
+    word-break: break-word;
+  }
+
+  /* Single Column Stack on Mobile for Certifications & Competitions */
+  .editorial-grid-two-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    width: 100%;
+  }
+
+  .editorial-cert-column,
+  .editorial-comp-column {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Stack Row Content Vertically on Mobile so NOTHING overflows */
+  .dual-col-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    min-height: auto;
+    padding: 1.05rem 0;
+    width: 100%;
+  }
+
+  .dual-col-main {
+    padding-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dual-col-title-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    width: 100%;
+  }
+
+  .dual-col-title {
+    font-size: 1rem;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+  }
+
+  .dual-col-sub {
+    font-size: 0.78rem;
+    word-break: break-word;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+  }
+
+  .dual-col-badge {
+    align-self: flex-start;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.65rem;
+    margin-top: 0.15rem;
+    white-space: nowrap;
+    max-width: 100%;
+  }
 }
