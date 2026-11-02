@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip 7 Score - Segnapunti da Tavolo Ufficiale & Companion</title>
+    <style>
+        :root {
+            --bg-color: #0d1b2a;
+            --card-bg: #1b263b;
+            --border-color: #415a77;
+            --text-primary: #f8f9fa;
+            --text-secondary: #e0e1dd;
+            --accent-teal: #0e747c;
+            --accent-yellow: #fca311;
+            --accent-red: #e63946;
+            --accent-glow: rgba(14, 116, 124, 0.35);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 50px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 720px;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent-yellow);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--accent-yellow);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(180deg, #ffffff 0%, #e0e1dd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: var(--accent-yellow);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 36px;
+            text-align: left;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+        }
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .feature-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .feature-desc {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .link-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+        .link-card:hover {
+            border-color: var(--accent-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(252, 163, 17, 0.2);
+        }
+        .link-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .link-desc {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+        footer {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">iOS Companion App</div>
+        <h1>Flip 7 Score</h1>
+        <div class="subtitle">L'App Segnapunti da Tavolo Definitiva</div>
+        <p>Dimentica carta e penna: calcolo automatico dei punteggi, gestione mazziere, supporto per le modalità Classica e Vengeance, storico partite e classifica record storici in 5 lingue.</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Calcolo Istantaneo</div>
+                <div class="feature-desc">Moltiplicatori x2, sballi a un tocco e bonus Flip 7 (+15) calcolati in automatico.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <div class="feature-title">Classica & Vengeance</div>
+                <div class="feature-desc">Supporto totale per le carte Zero, Lucky 13, dividi per 2 e modificatori negativi.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <div class="feature-title">Record Storici</div>
+                <div class="feature-desc">Traccia il punteggio più alto di sempre, la vittoria più rapida e la mano più esplosiva.</div>
+            </div>
+        </div>
+
+        <div class="links-grid">
+            <a href="privacy.html" class="link-card">
+                <div class="link-title">🛡️ Privacy Policy</div>
+                <div class="link-desc">100% offline, zero tracciamento e conformità App Store.</div>
+            </a>
+            <a href="support.html" class="link-card">
+                <div class="link-title">💬 Supporto & FAQ</div>
+                <div class="link-desc">Assistenza, guida alle regole e domande frequenti.</div>
+            </a>
+            <a href="terms.html" class="link-card">
+                <div class="link-title">📜 Termini di Servizio</div>
+                <div class="link-desc">Condizioni d'uso e disclaimer companion non ufficiale.</div>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 Lorenzo Frasconi (FRASCOH) • Sviluppatore Indipendente</p>
+            <p style="margin-top: 6px;">Flip 7 Score è un'applicazione utility indipendente e non è affiliata né sponsorizzata dai detentori del marchio originale del gioco da tavolo.</p>
+        </footer>
+    </div>
+</body>
+</html>
